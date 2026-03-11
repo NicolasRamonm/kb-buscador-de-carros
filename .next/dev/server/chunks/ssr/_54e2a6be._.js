@@ -479,12 +479,20 @@ __turbopack_context__.v([{"Name":"BYD","Model":"Dolphin","Image":"exemplo.png","
 "use strict";
 
 __turbopack_context__.s([
+    "carResponseToCar",
+    ()=>carResponseToCar,
+    "fetchAllCars",
+    ()=>fetchAllCars,
+    "fetchCarById",
+    ()=>fetchCarById,
     "findCarsByQuery",
     ()=>findCarsByQuery,
     "getAllCars",
     ()=>getAllCars,
     "getCarByIndex",
-    ()=>getCarByIndex
+    ()=>getCarByIndex,
+    "searchCarsWithAI",
+    ()=>searchCarsWithAI
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$cars$2e$json__$28$json$29$__ = __turbopack_context__.i("[project]/cars.json (json)");
 ;
@@ -498,6 +506,42 @@ function getCarByIndex(index) {
 function findCarsByQuery(query) {
     const lower = query.toLowerCase();
     return cars.filter((car)=>car.Name.toLowerCase().includes(lower) || car.Model.toLowerCase().includes(lower) || car.Location.toLowerCase().includes(lower));
+}
+async function searchCarsWithAI(query, userLat, userLng) {
+    const res = await fetch("/api/search", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            query,
+            userLat,
+            userLng
+        })
+    });
+    if (!res.ok) throw new Error("Search failed");
+    return res.json();
+}
+async function fetchAllCars() {
+    const res = await fetch("/api/cars");
+    if (!res.ok) throw new Error("Failed to fetch cars");
+    const data = await res.json();
+    return data.cars;
+}
+async function fetchCarById(id) {
+    const res = await fetch(`/api/cars/${id}`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data.car;
+}
+function carResponseToCar(cr) {
+    return {
+        Name: cr.brand,
+        Model: cr.model,
+        Image: cr.image,
+        Price: cr.price,
+        Location: cr.location
+    };
 }
 }),
 "[project]/src/components/features/car-search/CarSearchFeature.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {

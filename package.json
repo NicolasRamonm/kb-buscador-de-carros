@@ -9,12 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.99.1",
+    "clsx": "^2.1.1",
     "lucide-react": "^0.441.0",
     "next": "16.0.10",
+    "openai": "^6.27.0",
+    "rc-slider": "^10.5.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "clsx": "^2.1.1",
-    "rc-slider": "^10.5.0"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/node": "^20.14.10",
@@ -28,4 +30,3 @@
     "typescript": "^5.5.4"
   }
 }
-
