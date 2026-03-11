@@ -17,6 +17,7 @@ import type { SearchResponse, CarResponse } from "@/types/car";
 export function CarResultsFeature() {
   const params = useSearchParams();
   const query = params.get("q") ?? "";
+  const brandFilter = params.get("brand") ?? "";
 
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 200000]);
   const [carType, setCarType] = useState("");
@@ -27,7 +28,7 @@ export function CarResultsFeature() {
   const [showFinancingPopup, setShowFinancingPopup] = useState(false);
 
   useEffect(() => {
-    if (!query) return;
+    if (!query || brandFilter) return;
     let cancelled = false;
     setLoading(true);
 
@@ -48,7 +49,13 @@ export function CarResultsFeature() {
       });
 
     return () => { cancelled = true; };
-  }, [query]);
+  }, [query, brandFilter]);
+
+  const brandCars = useMemo(() => {
+    if (!brandFilter) return [];
+    const lower = brandFilter.toLowerCase();
+    return getAllCars().filter((car) => car.Name.toLowerCase().includes(lower));
+  }, [brandFilter]);
 
   const fallbackCars = useMemo(
     () => (query ? findCarsByQuery(query) : getAllCars()),
@@ -57,30 +64,43 @@ export function CarResultsFeature() {
 
   const specialOfferId = aiResult?.specialOffer?.car.id;
 
+  const isBrandMode = Boolean(brandFilter);
+  const allCars = useMemo(() => getAllCars(), []);
+
   const displayCars: Array<{ Name: string; Model: string; Price: number; Location: string; index: number; isRecommended: boolean; isSpecialOffer: boolean; year?: number; mileage?: number; transmission?: string; fuel?: string }> =
-    aiResult
-      ? aiResult.cars.map((car) => ({
-          Name: car.brand,
-          Model: car.model,
-          Price: car.price,
-          Location: car.location,
-          index: car.index,
-          isRecommended: aiResult.recommendation?.car.id === car.id,
-          isSpecialOffer: car.id === specialOfferId,
-          year: car.year,
-          mileage: car.mileage,
-          transmission: car.transmission,
-          fuel: car.fuel,
-        }))
-      : fallbackCars.map((car, i) => ({
+    isBrandMode
+      ? brandCars.map((car) => ({
           Name: car.Name,
           Model: car.Model,
           Price: car.Price,
           Location: car.Location,
-          index: i,
+          index: allCars.indexOf(car),
           isRecommended: false,
           isSpecialOffer: false,
-        }));
+        }))
+      : aiResult
+        ? aiResult.cars.map((car) => ({
+            Name: car.brand,
+            Model: car.model,
+            Price: car.price,
+            Location: car.location,
+            index: car.index,
+            isRecommended: aiResult.recommendation?.car.id === car.id,
+            isSpecialOffer: car.id === specialOfferId,
+            year: car.year,
+            mileage: car.mileage,
+            transmission: car.transmission,
+            fuel: car.fuel,
+          }))
+        : fallbackCars.map((car, i) => ({
+            Name: car.Name,
+            Model: car.Model,
+            Price: car.Price,
+            Location: car.Location,
+            index: i,
+            isRecommended: false,
+            isSpecialOffer: false,
+          }));
 
   const filtered = displayCars.filter(
     (car) =>
@@ -99,9 +119,13 @@ export function CarResultsFeature() {
       <header className="flex items-center justify-between">
         <BackNav href="/" label="Voltar para busca com IA" />
         <div className="flex flex-1 flex-col gap-1 pl-6" style={{ maxWidth: 640 }}>
-          <span className="text-[11px] text-gray-500">Resultados para</span>
+          <span className="text-[11px] text-gray-500">
+            {isBrandMode ? "Carros da marca" : "Resultados para"}
+          </span>
           <span className="text-[15px] font-semibold text-gray-900">
-            &ldquo;{query || "Carro confortável para família na cidade, até R$ 100.000"}&rdquo;
+            {isBrandMode
+              ? brandFilter
+              : `\u201C${query || "Carro confortável para família na cidade, até R$ 100.000"}\u201D`}
           </span>
         </div>
         <span className="text-xs text-gray-600">
@@ -110,7 +134,7 @@ export function CarResultsFeature() {
       </header>
 
       {/* AI Summary */}
-      {aiResult?.aiSummary && (
+      {!isBrandMode && aiResult?.aiSummary && (
         <Card className="flex items-start gap-3 border-violet-200 bg-violet-50 p-4">
           <Sparkles size={18} className="mt-0.5 shrink-0 text-violet-600" />
           <p className="text-[13px] leading-relaxed text-gray-800">
@@ -120,7 +144,7 @@ export function CarResultsFeature() {
       )}
 
       {/* Special Offer Card */}
-      {aiResult?.specialOffer && (
+      {!isBrandMode && aiResult?.specialOffer && (
         <Card className="flex gap-4 border-2 border-amber-300 bg-amber-50 p-4" shadow="md">
           <div className="h-[120px] w-[200px] shrink-0 rounded-xl bg-amber-100" />
           <div className="flex flex-1 flex-col gap-2">
@@ -172,13 +196,19 @@ export function CarResultsFeature() {
           {/* Sort row */}
           <div className="flex items-center justify-between">
             <span className="text-[11px] text-gray-500">
-              {aiResult
-                ? "Ordenado por relevância da IA"
-                : "Ordenado por melhor combinação para você"}
+              {isBrandMode
+                ? "Todos os carros da marca"
+                : aiResult
+                  ? "Ordenado por relevância da IA"
+                  : "Ordenado por melhor combinação para você"}
             </span>
             <div className="rounded-full border border-gray-200 bg-white px-2.5 py-1.5">
               <span className="text-[11px] text-gray-700">
-                {aiResult ? "Relevância IA" : "Preço (menor primeiro)"}
+                {isBrandMode
+                  ? "Filtro por marca"
+                  : aiResult
+                    ? "Relevância IA"
+                    : "Preço (menor primeiro)"}
               </span>
             </div>
           </div>

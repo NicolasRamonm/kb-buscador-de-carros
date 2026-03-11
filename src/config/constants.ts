@@ -3,7 +3,7 @@ export const BRANDS = [
   "Honda",
   "Hyundai",
   "Chevrolet",
-  "VW",
+  "Volkswagen",
   "BYD",
 ] as const;
 

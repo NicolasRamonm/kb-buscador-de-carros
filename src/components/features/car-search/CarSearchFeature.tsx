@@ -19,7 +19,7 @@ export function CarSearchFeature() {
   };
 
   const handleBrandSelect = (brand: string) => {
-    router.push(`/resultados?q=${encodeURIComponent(brand)}`);
+    router.push(`/resultados?brand=${encodeURIComponent(brand)}`);
   };
 
   return (
