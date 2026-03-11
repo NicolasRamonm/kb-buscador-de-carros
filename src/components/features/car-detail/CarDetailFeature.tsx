@@ -76,16 +76,16 @@ export function CarDetailFeature() {
 
               <div className="flex flex-col gap-2 pt-6">
                 <Button
-                  variant="primary"
-                  fullWidth
+                  variant="ghost"
+                  className="self-start border border-blue-200 !bg-blue-50 text-blue-700 hover:border-blue-300 hover:!bg-blue-100 hover:text-blue-800"
                   onClick={() => setShowModal(true)}
                 >
                   Simular financiamento
                 </Button>
                 <Button
-                  variant="secondary"
-                  fullWidth
-                  className="border-purple-200 bg-purple-50 text-purple-900 hover:bg-purple-100"
+                  variant="ghost"
+                  className="self-start border border-purple-200 bg-purple-50 text-purple-900 hover:bg-purple-100"
+                  onClick={() => setShowModal(true)}
                 >
                   Simular consórcio
                 </Button>

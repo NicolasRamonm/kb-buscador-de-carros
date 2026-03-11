@@ -63,7 +63,7 @@ export function HeroSearchIA({ onSearch }: HeroSearchIAProps) {
         {/* CTA */}
         <div className="flex justify-center">
           <Button size="lg" onClick={handleSubmit}>
-            Ver todas as ofertas (397.491)
+            Ver todas as ofertas
           </Button>
         </div>
       </div>
