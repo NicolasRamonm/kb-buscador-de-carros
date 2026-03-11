@@ -23,8 +23,8 @@ export function HeroSearchIA({ onSearch }: HeroSearchIAProps) {
       <div className="flex flex-col gap-5">
         {/* Suggestion row */}
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-base font-semibold text-gray-900">
-            Busque por
+          <span className="text-lg md:text-xl font-semibold text-gray-900">
+            Buscar
           </span>
           <Sparkles size={20} className="text-violet-600" />
           <span className="text-base font-medium text-blue-600">

@@ -125,8 +125,8 @@ function HeroSearchIA({ onSearch }) {
                     className: "flex flex-wrap items-center gap-2",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "text-base font-semibold text-gray-900",
-                            children: "Busque por"
+                            className: "text-lg md:text-xl font-semibold text-gray-900",
+                            children: "Buscar"
                         }, void 0, false, {
                             fileName: "[project]/src/components/blocks/HeroSearchIA.tsx",
                             lineNumber: 26,
@@ -254,7 +254,7 @@ function BrandsRow({ selected = "Hyundai", onSelect }) {
         className: "flex flex-col gap-6",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                className: "text-lg font-bold text-gray-900",
+                className: "text-lg font-bold text-gray-900 text-center",
                 children: "Busque por Marcas"
             }, void 0, false, {
                 fileName: "[project]/src/components/blocks/BrandsRow.tsx",
@@ -264,27 +264,26 @@ function BrandsRow({ selected = "Hyundai", onSelect }) {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex flex-wrap items-center justify-center gap-6",
                 children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$constants$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["BRANDS"].map((brand)=>{
-                    const isActive = brand === selected;
                     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>onSelect?.(brand),
-                        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("flex flex-col items-center justify-center rounded-full bg-white transition-all", isActive ? "h-[120px] w-[120px] border-2 border-blue-600" : "h-[100px] w-[100px] border border-gray-200 hover:border-gray-300"),
+                        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("group flex flex-col items-center justify-center rounded-full bg-white transition-all", "h-[120px] w-[120px] border-2 border-gray-200 hover:border-blue-600 hover:shadow-md hover:scale-105"),
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("text-center text-xs font-bold", isActive ? "text-blue-600" : "text-gray-900"),
+                            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("text-center text-xs font-bold text-gray-900 group-hover:text-blue-600"),
                             children: brand
                         }, void 0, false, {
                             fileName: "[project]/src/components/blocks/BrandsRow.tsx",
-                            lineNumber: 29,
+                            lineNumber: 28,
                             columnNumber: 15
                         }, this)
                     }, brand, false, {
                         fileName: "[project]/src/components/blocks/BrandsRow.tsx",
-                        lineNumber: 19,
+                        lineNumber: 20,
                         columnNumber: 13
                     }, this);
                 })
             }, void 0, false, {
                 fileName: "[project]/src/components/blocks/BrandsRow.tsx",
-                lineNumber: 15,
+                lineNumber: 17,
                 columnNumber: 7
             }, this)
         ]
