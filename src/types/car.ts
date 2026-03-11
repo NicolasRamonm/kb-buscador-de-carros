@@ -82,6 +82,13 @@ export interface PopupFlags {
     closerAlternative?: string;
   };
   noResults: boolean;
+  showFinancingPopup: boolean;
+}
+
+export interface SpecialOffer {
+  car: CarResponse;
+  tag: string;
+  triggerFinancingPopup: boolean;
 }
 
 export interface SearchResponse {
@@ -95,6 +102,7 @@ export interface SearchResponse {
     score: number;
     reason: string;
   }>;
+  specialOffer: SpecialOffer | null;
   cars: CarResponse[];
   popups: PopupFlags;
   aiSummary: string;
@@ -130,5 +138,6 @@ export interface FilterResult {
 export interface RecommendationResult {
   recommended: ScoredCar | null;
   alternatives: ScoredCar[];
+  specialOffer: SpecialOffer | null;
   popups: PopupFlags;
 }

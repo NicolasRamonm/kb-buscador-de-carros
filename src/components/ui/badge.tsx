@@ -1,7 +1,7 @@
 import { type HTMLAttributes } from "react";
 import clsx from "clsx";
 
-type Variant = "success" | "info" | "purple";
+type Variant = "success" | "info" | "purple" | "special";
 
 interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   variant?: Variant;
@@ -11,6 +11,7 @@ const variantStyles: Record<Variant, string> = {
   success: "bg-green-100 text-green-800",
   info: "bg-indigo-50 text-blue-700",
   purple: "bg-purple-50 text-purple-900",
+  special: "bg-amber-100 text-amber-800",
 };
 
 export function Badge({

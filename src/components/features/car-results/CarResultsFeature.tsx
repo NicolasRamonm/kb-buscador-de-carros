@@ -24,6 +24,7 @@ export function CarResultsFeature() {
   const [loading, setLoading] = useState(false);
   const [showPricePopup, setShowPricePopup] = useState(false);
   const [showDistancePopup, setShowDistancePopup] = useState(false);
+  const [showFinancingPopup, setShowFinancingPopup] = useState(false);
 
   useEffect(() => {
     if (!query) return;
@@ -39,6 +40,7 @@ export function CarResultsFeature() {
         }
         if (result.popups.priceExceeded) setShowPricePopup(true);
         if (result.popups.distanceWarning) setShowDistancePopup(true);
+        if (result.popups.showFinancingPopup) setShowFinancingPopup(true);
       })
       .catch(() => {})
       .finally(() => {
@@ -53,7 +55,9 @@ export function CarResultsFeature() {
     [query]
   );
 
-  const displayCars: Array<{ Name: string; Model: string; Price: number; Location: string; index: number; isRecommended: boolean; year?: number; mileage?: number; transmission?: string; fuel?: string }> =
+  const specialOfferId = aiResult?.specialOffer?.car.id;
+
+  const displayCars: Array<{ Name: string; Model: string; Price: number; Location: string; index: number; isRecommended: boolean; isSpecialOffer: boolean; year?: number; mileage?: number; transmission?: string; fuel?: string }> =
     aiResult
       ? aiResult.cars.map((car) => ({
           Name: car.brand,
@@ -62,6 +66,7 @@ export function CarResultsFeature() {
           Location: car.location,
           index: car.index,
           isRecommended: aiResult.recommendation?.car.id === car.id,
+          isSpecialOffer: car.id === specialOfferId,
           year: car.year,
           mileage: car.mileage,
           transmission: car.transmission,
@@ -74,10 +79,13 @@ export function CarResultsFeature() {
           Location: car.Location,
           index: i,
           isRecommended: false,
+          isSpecialOffer: false,
         }));
 
   const filtered = displayCars.filter(
-    (car) => car.Price >= priceRange[0] && car.Price <= priceRange[1]
+    (car) =>
+      car.isSpecialOffer ||
+      (car.Price >= priceRange[0] && car.Price <= priceRange[1])
   );
 
   const handleClearFilters = () => {
@@ -108,6 +116,44 @@ export function CarResultsFeature() {
           <p className="text-[13px] leading-relaxed text-gray-800">
             {aiResult.aiSummary}
           </p>
+        </Card>
+      )}
+
+      {/* Special Offer Card */}
+      {aiResult?.specialOffer && (
+        <Card className="flex gap-4 border-2 border-amber-300 bg-amber-50 p-4" shadow="md">
+          <div className="h-[120px] w-[200px] shrink-0 rounded-xl bg-amber-100" />
+          <div className="flex flex-1 flex-col gap-2">
+            <div className="flex items-center gap-2">
+              <h3 className="text-[15px] font-semibold text-gray-900">
+                {aiResult.specialOffer.car.fullName}
+              </h3>
+              <Badge variant="special">{aiResult.specialOffer.tag}</Badge>
+            </div>
+            <p className="text-xs text-gray-600">
+              {aiResult.specialOffer.car.year} &bull;{" "}
+              {aiResult.specialOffer.car.mileage.toLocaleString("pt-BR")} km &bull;{" "}
+              {aiResult.specialOffer.car.transmission} &bull;{" "}
+              {aiResult.specialOffer.car.fuel}
+            </p>
+            <div className="mt-auto flex items-center justify-between">
+              <div className="flex flex-col gap-0.5">
+                <span className="text-base font-bold text-amber-700">
+                  {formatPrice(aiResult.specialOffer.car.price)}
+                </span>
+                <span className="text-[11px] text-gray-500">
+                  {aiResult.specialOffer.car.location}
+                </span>
+              </div>
+              <Button
+                size="sm"
+                className="border-amber-400 bg-amber-600 text-white hover:bg-amber-700"
+                onClick={() => setShowFinancingPopup(true)}
+              >
+                Ver condições
+              </Button>
+            </div>
+          </div>
         </Card>
       )}
 
@@ -152,10 +198,20 @@ export function CarResultsFeature() {
             filtered.map((car) => (
               <Card
                 key={`${car.Name}-${car.Model}-${car.index}`}
-                className="flex gap-4 p-3"
+                className={
+                  car.isSpecialOffer
+                    ? "flex gap-4 border-2 border-amber-300 bg-amber-50/50 p-3"
+                    : "flex gap-4 p-3"
+                }
                 shadow="md"
               >
-                <div className="h-[140px] w-[220px] shrink-0 rounded-xl bg-gray-200" />
+                <div
+                  className={
+                    car.isSpecialOffer
+                      ? "h-[140px] w-[220px] shrink-0 rounded-xl bg-amber-100"
+                      : "h-[140px] w-[220px] shrink-0 rounded-xl bg-gray-200"
+                  }
+                />
                 <div className="flex flex-1 flex-col gap-1.5">
                   <div className="flex items-center gap-1.5">
                     <h3 className="text-[15px] font-semibold text-gray-900">
@@ -163,6 +219,9 @@ export function CarResultsFeature() {
                     </h3>
                     {car.isRecommended && (
                       <Badge variant="success">Recomendado pela IA</Badge>
+                    )}
+                    {car.isSpecialOffer && (
+                      <Badge variant="special">Condições especiais para você</Badge>
                     )}
                   </div>
                   <p className="text-xs text-gray-600">
@@ -173,16 +232,32 @@ export function CarResultsFeature() {
                   </p>
                   <div className="mt-auto flex items-center justify-between">
                     <div className="flex flex-col gap-0.5">
-                      <span className="text-base font-bold text-blue-600">
+                      <span
+                        className={
+                          car.isSpecialOffer
+                            ? "text-base font-bold text-amber-700"
+                            : "text-base font-bold text-blue-600"
+                        }
+                      >
                         {formatPrice(car.Price)}
                       </span>
                       <span className="text-[11px] text-gray-500">
                         {car.Location}
                       </span>
                     </div>
-                    <Link href={`/detalhe?id=${car.index}`}>
-                      <Button size="sm">Ver detalhes</Button>
-                    </Link>
+                    {car.isSpecialOffer ? (
+                      <Button
+                        size="sm"
+                        className="border-amber-400 bg-amber-600 text-white hover:bg-amber-700"
+                        onClick={() => setShowFinancingPopup(true)}
+                      >
+                        Ver condições
+                      </Button>
+                    ) : (
+                      <Link href={`/detalhe?id=${car.index}`}>
+                        <Button size="sm">Ver detalhes</Button>
+                      </Link>
+                    )}
                   </div>
                 </div>
               </Card>
@@ -240,6 +315,79 @@ export function CarResultsFeature() {
             </p>
           )}
           <Button onClick={() => setShowDistancePopup(false)}>Entendi</Button>
+        </div>
+      </Modal>
+
+      {/* Financing / Special Offer popup */}
+      <Modal
+        open={showFinancingPopup}
+        onClose={() => setShowFinancingPopup(false)}
+      >
+        <div className="flex flex-col gap-4">
+          <span className="text-xs font-semibold text-amber-600">
+            Condições especiais
+          </span>
+          <h2 className="text-xl font-bold text-gray-900">
+            Condições especiais para você
+          </h2>
+          {aiResult?.specialOffer && (
+            <>
+              <p className="text-sm text-gray-600">
+                Este modelo está acima da faixa que você buscou, mas nossa IA
+                identificou que ele pode caber no seu bolso através de condições
+                especiais como consórcio ou financiamento.
+              </p>
+              <div className="flex items-center justify-between rounded-xl border border-amber-200 bg-amber-50 p-3">
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    {aiResult.specialOffer.car.fullName}
+                  </p>
+                  <p className="text-lg font-bold text-amber-700">
+                    {formatPrice(aiResult.specialOffer.car.price)}
+                  </p>
+                </div>
+                {aiResult.popups.priceExceededData && (
+                  <div className="text-right">
+                    <p className="text-[11px] text-gray-500">Seu orçamento</p>
+                    <p className="text-sm font-semibold text-gray-700">
+                      {formatPrice(aiResult.popups.priceExceededData.requestedMax)}
+                    </p>
+                  </div>
+                )}
+              </div>
+              <div className="flex flex-col gap-2">
+                <div className="rounded-xl border border-blue-200 bg-blue-50 p-3">
+                  <p className="text-sm font-semibold text-blue-700">
+                    Simular financiamento automático
+                  </p>
+                  <p className="text-xs text-gray-800">
+                    Parcelas flexíveis em bancos parceiros.
+                  </p>
+                </div>
+                <div className="rounded-xl border border-purple-200 bg-purple-50 p-3">
+                  <p className="text-sm font-semibold text-purple-900">
+                    Ver opções de consórcio
+                  </p>
+                  <p className="text-xs text-gray-800">
+                    Consórcio sem juros, com carta de crédito.
+                  </p>
+                </div>
+              </div>
+              <div className="flex justify-end gap-2">
+                <Button
+                  variant="ghost"
+                  onClick={() => setShowFinancingPopup(false)}
+                >
+                  Fechar
+                </Button>
+                <Link
+                  href={`/simulacao?id=${aiResult.specialOffer.car.index}`}
+                >
+                  <Button>Simular agora</Button>
+                </Link>
+              </div>
+            </>
+          )}
         </div>
       </Modal>
     </div>

@@ -322,7 +322,9 @@ __turbopack_context__.s([
     "POPUP_THRESHOLDS",
     ()=>POPUP_THRESHOLDS,
     "SCORE_WEIGHTS",
-    ()=>SCORE_WEIGHTS
+    ()=>SCORE_WEIGHTS,
+    "SPECIAL_OFFER",
+    ()=>SPECIAL_OFFER
 ]);
 const SCORE_WEIGHTS = {
     semantic: 0.30,
@@ -338,6 +340,10 @@ const DISTANCE_THRESHOLDS = {
 const POPUP_THRESHOLDS = {
     distanceWarningKm: 100,
     alternativeScoreRatio: 0.5
+};
+const SPECIAL_OFFER = {
+    maxPriceFlexPercent: parseFloat(process.env.MAX_PRICE_FLEX_PERCENT ?? "0.50"),
+    tag: "Condições especiais para você"
 };
 }),
 "[project]/src/backend/modules/distance.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
@@ -473,27 +479,52 @@ function buildRecommendation(scoredCars, intent, filterResult, userLat, userLng)
         return {
             recommended: null,
             alternatives: [],
+            specialOffer: null,
             popups: {
                 priceExceeded: false,
                 distanceWarning: false,
-                noResults: true
+                noResults: true,
+                showFinancingPopup: false
             }
         };
     }
     const recommended = scoredCars[0];
-    const alternatives = scoredCars.slice(1, 5);
-    const popups = buildPopupFlags(recommended, alternatives, intent, filterResult, userLat, userLng);
+    let alternatives = scoredCars.slice(1, 5);
+    const specialOffer = buildSpecialOffer(scoredCars, intent, filterResult);
+    if (specialOffer) {
+        alternatives = alternatives.filter((alt)=>alt.car.id !== specialOffer.car.id);
+    }
+    const popups = buildPopupFlags(recommended, alternatives, intent, filterResult, specialOffer, userLat, userLng);
     return {
         recommended,
         alternatives,
+        specialOffer,
         popups
     };
 }
-function buildPopupFlags(recommended, alternatives, intent, filterResult, userLat, userLng) {
+function buildSpecialOffer(scoredCars, intent, filterResult) {
+    if (!intent.model) return null;
+    if (!filterResult.flags.exactModelFound) return null;
+    if (!filterResult.flags.priceExceeded) return null;
+    if (!intent.maxPrice) return null;
+    const modelCar = findEnrichedCar(intent.model);
+    if (!modelCar) return null;
+    const priceDiff = (modelCar.price - intent.maxPrice) / intent.maxPrice;
+    if (priceDiff > __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$backend$2f$config$2f$weights$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["SPECIAL_OFFER"].maxPriceFlexPercent) return null;
+    const scored = scoredCars.find((sc)=>sc.car.model.toLowerCase() === intent.model.toLowerCase());
+    if (!scored) return null;
+    return {
+        car: scored.car,
+        tag: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$backend$2f$config$2f$weights$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["SPECIAL_OFFER"].tag,
+        triggerFinancingPopup: true
+    };
+}
+function buildPopupFlags(recommended, alternatives, intent, filterResult, specialOffer, userLat, userLng) {
     const popups = {
         priceExceeded: false,
         distanceWarning: false,
-        noResults: false
+        noResults: false,
+        showFinancingPopup: false
     };
     if (filterResult.flags.priceExceeded && intent.maxPrice) {
         const modelCar = findEnrichedCar(intent.model);
@@ -505,6 +536,9 @@ function buildPopupFlags(recommended, alternatives, intent, filterResult, userLa
                 carName: modelCar.fullName
             };
         }
+    }
+    if (specialOffer) {
+        popups.showFinancingPopup = true;
     }
     if (intent.nearMe && userLat != null && userLng != null) {
         const recCar = findEnrichedCar(recommended.car.model);
@@ -560,6 +594,7 @@ async function buildSearchResponse(recommendation, allScoredCars, intent) {
                 score: alt.score,
                 reason: alternativeReasons[i] || "Boa alternativa com base na sua busca."
             })),
+        specialOffer: recommendation.specialOffer,
         cars: allScoredCars.map((sc)=>sc.car),
         popups: recommendation.popups,
         aiSummary: explanation,
@@ -584,15 +619,17 @@ async function generateExplanation(rec, intent) {
     const altList = rec.alternatives.slice(0, 3).map((a)=>`${a.car.fullName} (R$ ${a.car.price.toLocaleString("pt-BR")})`).join(", ");
     const priceNote = rec.popups.priceExceeded ? `O usuário queria gastar no máximo R$ ${intent.maxPrice?.toLocaleString("pt-BR")}, mas o carro recomendado custa R$ ${recommended.car.price.toLocaleString("pt-BR")}.` : "";
     const distanceNote = rec.popups.distanceWarning ? `O carro recomendado está a ${rec.popups.distanceWarningData?.distanceKm}km do usuário.` : "";
+    const specialOfferNote = rec.specialOffer ? `O modelo solicitado (${rec.specialOffer.car.fullName} - R$ ${rec.specialOffer.car.price.toLocaleString("pt-BR")}) está acima do orçamento, mas está disponível com condições especiais de financiamento ou consórcio.` : "";
     const prompt = `Gere uma explicação curta (2-3 frases) em português brasileiro sobre por que este carro foi recomendado.
 
 Carro recomendado: ${recommended.car.fullName} - R$ ${recommended.car.price.toLocaleString("pt-BR")} - ${recommended.car.location}
 Busca do usuário: "${intent.rawQuery}"
 ${priceNote}
 ${distanceNote}
+${specialOfferNote}
 Alternativas: ${altList || "nenhuma"}
 
-Seja direto, útil e amigável. Se o preço excede o orçamento, mencione isso e sugira alternativas. Não use markdown.`;
+Seja direto, útil e amigável. Se o preço excede o orçamento, mencione isso e sugira alternativas. Se há condições especiais para o modelo desejado, mencione brevemente. Não use markdown.`;
     const response = await openai.chat.completions.create({
         model: "gpt-4o-mini",
         temperature: 0.7,

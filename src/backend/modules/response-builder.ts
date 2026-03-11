@@ -35,6 +35,7 @@ export async function buildSearchResponse(
       score: alt.score,
       reason: alternativeReasons[i] || "Boa alternativa com base na sua busca.",
     })),
+    specialOffer: recommendation.specialOffer,
     cars: allScoredCars.map((sc) => sc.car),
     popups: recommendation.popups,
     aiSummary: explanation,
@@ -72,15 +73,20 @@ async function generateExplanation(
     ? `O carro recomendado está a ${rec.popups.distanceWarningData?.distanceKm}km do usuário.`
     : "";
 
+  const specialOfferNote = rec.specialOffer
+    ? `O modelo solicitado (${rec.specialOffer.car.fullName} - R$ ${rec.specialOffer.car.price.toLocaleString("pt-BR")}) está acima do orçamento, mas está disponível com condições especiais de financiamento ou consórcio.`
+    : "";
+
   const prompt = `Gere uma explicação curta (2-3 frases) em português brasileiro sobre por que este carro foi recomendado.
 
 Carro recomendado: ${recommended.car.fullName} - R$ ${recommended.car.price.toLocaleString("pt-BR")} - ${recommended.car.location}
 Busca do usuário: "${intent.rawQuery}"
 ${priceNote}
 ${distanceNote}
+${specialOfferNote}
 Alternativas: ${altList || "nenhuma"}
 
-Seja direto, útil e amigável. Se o preço excede o orçamento, mencione isso e sugira alternativas. Não use markdown.`;
+Seja direto, útil e amigável. Se o preço excede o orçamento, mencione isso e sugira alternativas. Se há condições especiais para o modelo desejado, mencione brevemente. Não use markdown.`;
 
   const response = await openai.chat.completions.create({
     model: "gpt-4o-mini",

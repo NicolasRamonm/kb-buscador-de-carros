@@ -1,4 +1,4 @@
-import { POPUP_THRESHOLDS } from "@/backend/config/weights";
+import { POPUP_THRESHOLDS, SPECIAL_OFFER } from "@/backend/config/weights";
 import { haversineDistance } from "./distance";
 import type {
   ScoredCar,
@@ -6,6 +6,7 @@ import type {
   FilterResult,
   RecommendationResult,
   PopupFlags,
+  SpecialOffer,
 } from "@/types/car";
 import carsEnriched from "@/backend/data/cars-enriched.json";
 import type { EnrichedCar } from "@/types/car";
@@ -23,23 +24,70 @@ export function buildRecommendation(
     return {
       recommended: null,
       alternatives: [],
-      popups: { priceExceeded: false, distanceWarning: false, noResults: true },
+      specialOffer: null,
+      popups: {
+        priceExceeded: false,
+        distanceWarning: false,
+        noResults: true,
+        showFinancingPopup: false,
+      },
     };
   }
 
   const recommended = scoredCars[0];
-  const alternatives = scoredCars.slice(1, 5);
+  let alternatives = scoredCars.slice(1, 5);
+
+  const specialOffer = buildSpecialOffer(
+    scoredCars,
+    intent,
+    filterResult
+  );
+
+  if (specialOffer) {
+    alternatives = alternatives.filter(
+      (alt) => alt.car.id !== specialOffer.car.id
+    );
+  }
 
   const popups = buildPopupFlags(
     recommended,
     alternatives,
     intent,
     filterResult,
+    specialOffer,
     userLat,
     userLng
   );
 
-  return { recommended, alternatives, popups };
+  return { recommended, alternatives, specialOffer, popups };
+}
+
+function buildSpecialOffer(
+  scoredCars: ScoredCar[],
+  intent: ParsedIntent,
+  filterResult: FilterResult
+): SpecialOffer | null {
+  if (!intent.model) return null;
+  if (!filterResult.flags.exactModelFound) return null;
+  if (!filterResult.flags.priceExceeded) return null;
+  if (!intent.maxPrice) return null;
+
+  const modelCar = findEnrichedCar(intent.model);
+  if (!modelCar) return null;
+
+  const priceDiff = (modelCar.price - intent.maxPrice) / intent.maxPrice;
+  if (priceDiff > SPECIAL_OFFER.maxPriceFlexPercent) return null;
+
+  const scored = scoredCars.find(
+    (sc) => sc.car.model.toLowerCase() === intent.model!.toLowerCase()
+  );
+  if (!scored) return null;
+
+  return {
+    car: scored.car,
+    tag: SPECIAL_OFFER.tag,
+    triggerFinancingPopup: true,
+  };
 }
 
 function buildPopupFlags(
@@ -47,6 +95,7 @@ function buildPopupFlags(
   alternatives: ScoredCar[],
   intent: ParsedIntent,
   filterResult: FilterResult,
+  specialOffer: SpecialOffer | null,
   userLat?: number,
   userLng?: number
 ): PopupFlags {
@@ -54,6 +103,7 @@ function buildPopupFlags(
     priceExceeded: false,
     distanceWarning: false,
     noResults: false,
+    showFinancingPopup: false,
   };
 
   if (filterResult.flags.priceExceeded && intent.maxPrice) {
@@ -66,6 +116,10 @@ function buildPopupFlags(
         carName: modelCar.fullName,
       };
     }
+  }
+
+  if (specialOffer) {
+    popups.showFinancingPopup = true;
   }
 
   if (intent.nearMe && userLat != null && userLng != null) {

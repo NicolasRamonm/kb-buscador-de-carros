@@ -15,3 +15,8 @@ export const POPUP_THRESHOLDS = {
   distanceWarningKm: 100,
   alternativeScoreRatio: 0.5,
 } as const;
+
+export const SPECIAL_OFFER = {
+  maxPriceFlexPercent: parseFloat(process.env.MAX_PRICE_FLEX_PERCENT ?? "0.50"),
+  tag: "Condições especiais para você",
+} as const;

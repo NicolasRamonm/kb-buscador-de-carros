@@ -53,7 +53,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$clsx$2f$dist
 const variantStyles = {
     success: "bg-green-100 text-green-800",
     info: "bg-indigo-50 text-blue-700",
-    purple: "bg-purple-50 text-purple-900"
+    purple: "bg-purple-50 text-purple-900",
+    special: "bg-amber-100 text-amber-800"
 };
 function Badge({ variant = "info", className, children, ...props }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -62,7 +63,7 @@ function Badge({ variant = "info", className, children, ...props }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/src/components/ui/badge.tsx",
-        lineNumber: 23,
+        lineNumber: 24,
         columnNumber: 5
     }, this);
 }
@@ -168,12 +169,20 @@ __turbopack_context__.v([{"Name":"BYD","Model":"Dolphin","Image":"exemplo.png","
 "use strict";
 
 __turbopack_context__.s([
+    "carResponseToCar",
+    ()=>carResponseToCar,
+    "fetchAllCars",
+    ()=>fetchAllCars,
+    "fetchCarById",
+    ()=>fetchCarById,
     "findCarsByQuery",
     ()=>findCarsByQuery,
     "getAllCars",
     ()=>getAllCars,
     "getCarByIndex",
-    ()=>getCarByIndex
+    ()=>getCarByIndex,
+    "searchCarsWithAI",
+    ()=>searchCarsWithAI
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$cars$2e$json__$28$json$29$__ = __turbopack_context__.i("[project]/cars.json (json)");
 ;
@@ -187,6 +196,42 @@ function getCarByIndex(index) {
 function findCarsByQuery(query) {
     const lower = query.toLowerCase();
     return cars.filter((car)=>car.Name.toLowerCase().includes(lower) || car.Model.toLowerCase().includes(lower) || car.Location.toLowerCase().includes(lower));
+}
+async function searchCarsWithAI(query, userLat, userLng) {
+    const res = await fetch("/api/search", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            query,
+            userLat,
+            userLng
+        })
+    });
+    if (!res.ok) throw new Error("Search failed");
+    return res.json();
+}
+async function fetchAllCars() {
+    const res = await fetch("/api/cars");
+    if (!res.ok) throw new Error("Failed to fetch cars");
+    const data = await res.json();
+    return data.cars;
+}
+async function fetchCarById(id) {
+    const res = await fetch(`/api/cars/${id}`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data.car;
+}
+function carResponseToCar(cr) {
+    return {
+        Name: cr.brand,
+        Model: cr.model,
+        Image: cr.image,
+        Price: cr.price,
+        Location: cr.location
+    };
 }
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
