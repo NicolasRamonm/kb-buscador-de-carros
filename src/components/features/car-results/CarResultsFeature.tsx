@@ -332,25 +332,27 @@ export function CarResultsFeature() {
                 style={{ animationDelay: `${i * 60}ms` }}
                 shadow="md"
               >
-                {car.Image ? (
-                  <img
-                    src={car.Image}
-                    alt={`${car.Name} ${car.Model}`}
-                    className={
-                      car.isSpecialOffer
-                        ? "h-[140px] w-[220px] shrink-0 rounded-xl object-cover"
-                        : "h-[140px] w-[220px] shrink-0 rounded-xl object-cover"
-                    }
-                  />
-                ) : (
-                  <div
-                    className={
-                      car.isSpecialOffer
-                        ? "h-[140px] w-[220px] shrink-0 rounded-xl bg-amber-100"
-                        : "h-[140px] w-[220px] shrink-0 rounded-xl bg-gray-200"
-                    }
-                  />
-                )}
+                <Link href={`/detalhe?id=${car.index}`} className="shrink-0">
+                  {car.Image ? (
+                    <img
+                      src={car.Image}
+                      alt={`${car.Name} ${car.Model}`}
+                      className={
+                        car.isSpecialOffer
+                          ? "h-[140px] w-[220px] rounded-xl object-cover"
+                          : "h-[140px] w-[220px] rounded-xl object-cover"
+                      }
+                    />
+                  ) : (
+                    <div
+                      className={
+                        car.isSpecialOffer
+                          ? "h-[140px] w-[220px] rounded-xl bg-amber-100"
+                          : "h-[140px] w-[220px] rounded-xl bg-gray-200"
+                      }
+                    />
+                  )}
+                </Link>
                 <div className="flex flex-1 flex-col gap-1.5">
                   <div className="flex items-center gap-1.5">
                     <h3 className="text-[15px] font-semibold text-gray-900">
@@ -497,22 +499,28 @@ export function CarResultsFeature() {
                 )}
               </div>
               <div className="flex flex-col gap-2">
-                <div className="rounded-xl border border-blue-200 bg-blue-50 p-3">
+                <Link
+                  href={`/simulacao?id=${aiResult.specialOffer.car.index}`}
+                  className="rounded-xl border border-blue-200 bg-blue-50 p-3 transition-colors hover:bg-blue-100"
+                >
                   <p className="text-sm font-semibold text-blue-700">
                     Simular financiamento automático
                   </p>
                   <p className="text-xs text-gray-800">
                     Parcelas flexíveis em bancos parceiros.
                   </p>
-                </div>
-                <div className="rounded-xl border border-purple-200 bg-purple-50 p-3">
+                </Link>
+                <Link
+                  href={`/simulacao?id=${aiResult.specialOffer.car.index}`}
+                  className="rounded-xl border border-purple-200 bg-purple-50 p-3 transition-colors hover:bg-purple-100"
+                >
                   <p className="text-sm font-semibold text-purple-900">
                     Ver opções de consórcio
                   </p>
                   <p className="text-xs text-gray-800">
                     Consórcio sem juros, com carta de crédito.
                   </p>
-                </div>
+                </Link>
               </div>
               <div className="flex justify-end gap-2">
                 <Button
