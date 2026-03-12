@@ -8,6 +8,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant;
   size?: Size;
   fullWidth?: boolean;
+  loading?: boolean;
 }
 
 const variantStyles: Record<Variant, string> = {
@@ -27,21 +28,27 @@ export function Button({
   variant = "primary",
   size = "md",
   fullWidth,
+  loading,
   className,
   children,
+  disabled,
   ...props
 }: ButtonProps) {
   return (
     <button
       className={clsx(
-        "inline-flex items-center justify-center rounded-full font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+        "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
         variantStyles[variant],
         sizeStyles[size],
         fullWidth && "w-full",
         className
       )}
+      disabled={disabled || loading}
       {...props}
     >
+      {loading && (
+        <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+      )}
       {children}
     </button>
   );

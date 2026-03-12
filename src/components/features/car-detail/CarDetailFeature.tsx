@@ -33,6 +33,24 @@ export function CarDetailFeature() {
   const [selectedImage, setSelectedImage] = useState<string>(
     car.Image || imageUrls[0] || ""
   );
+  const [imageOpacity, setImageOpacity] = useState(true);
+  const [liked, setLiked] = useState(false);
+  const [heartBounce, setHeartBounce] = useState(false);
+
+  const handleLike = () => {
+    setLiked((prev) => !prev);
+    setHeartBounce(true);
+    setTimeout(() => setHeartBounce(false), 300);
+  };
+
+  const handleImageChange = (url: string) => {
+    if (url === selectedImage) return;
+    setImageOpacity(false);
+    setTimeout(() => {
+      setSelectedImage(url);
+      setImageOpacity(true);
+    }, 150);
+  };
 
   return (
     <>
@@ -42,8 +60,13 @@ export function CarDetailFeature() {
           <BackNav href="/resultados" label="Voltar para resultados" />
           <div className="flex items-center gap-2">
             <Badge variant="success">Recomendado pela IA</Badge>
-            <button className="text-gray-400 hover:text-gray-600">
-              <Heart size={20} />
+            <button
+              onClick={handleLike}
+              className={`transition-transform duration-200 ${
+                liked ? "text-red-500" : "text-gray-400 hover:text-gray-600"
+              } ${heartBounce ? "scale-125" : "scale-100"}`}
+            >
+              <Heart size={20} fill={liked ? "currentColor" : "none"} />
             </button>
           </div>
         </header>
@@ -56,7 +79,9 @@ export function CarDetailFeature() {
               <img
                 src={selectedImage}
                 alt={fullTitle}
-                className="h-[360px] w-full rounded-2xl object-cover"
+                className={`h-[360px] w-full rounded-2xl object-cover transition-opacity duration-200 ${
+                  imageOpacity ? "opacity-100" : "opacity-0"
+                }`}
               />
             ) : (
               <div className="h-[360px] w-full rounded-2xl bg-gray-200" />
@@ -66,7 +91,7 @@ export function CarDetailFeature() {
                 <button
                   key={url}
                   type="button"
-                  onClick={() => setSelectedImage(url)}
+                  onClick={() => handleImageChange(url)}
                   className={`h-20 flex-1 overflow-hidden rounded-xl border transition-colors ${
                     selectedImage === url
                       ? "border-blue-500"

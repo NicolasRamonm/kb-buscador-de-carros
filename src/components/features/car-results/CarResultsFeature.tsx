@@ -136,14 +136,17 @@ export function CarResultsFeature() {
           label={simpleMode ? "Voltar para busca" : "Voltar para busca com IA"}
         />
         <div className="flex-1" />
-        <span className="text-xs text-gray-600">
+        <span
+          key={loading ? "loading" : filtered.length}
+          className="text-xs text-gray-600 animate-fade-in"
+        >
           {loading ? "Buscando..." : `${filtered.length} carros encontrados`}
         </span>
       </header>
 
       {/* AI Summary */}
       {!isBrandMode && aiResult?.aiSummary && (
-        <Card className="flex items-start gap-3 border-violet-200 bg-violet-50 p-4">
+        <Card className="flex items-start gap-3 border-violet-200 bg-violet-50 p-4 animate-fade-in-up">
           <Sparkles size={18} className="mt-0.5 shrink-0 text-violet-600" />
           <p className="text-[13px] leading-relaxed text-gray-800">
             {aiResult.aiSummary}
@@ -153,7 +156,7 @@ export function CarResultsFeature() {
 
       {/* Special Offer Card */}
       {!isBrandMode && aiResult?.specialOffer && (
-        <Card className="flex gap-4 border-2 border-amber-300 bg-amber-50 p-4" shadow="md">
+        <Card className="flex gap-4 border-2 border-amber-300 bg-amber-50 p-4 animate-fade-in-up" shadow="md">
           <div className="h-[120px] w-[200px] shrink-0 rounded-xl bg-amber-100 overflow-hidden">
             <img
               src={aiResult.specialOffer.car.image || `/img/${aiResult.specialOffer.car.id}/1.png`}
@@ -197,7 +200,7 @@ export function CarResultsFeature() {
 
       {/* Location hint banner */}
       {!isBrandMode && aiResult?.popups.showLocationHint && aiResult.popups.locationHintData && (
-        <Card className="flex items-start gap-3 border-blue-200 bg-blue-50 p-4">
+        <Card className="flex items-start gap-3 border-blue-200 bg-blue-50 p-4 animate-fade-in-up">
           <MapPin size={18} className="mt-0.5 shrink-0 text-blue-600" />
           <p className="text-[13px] leading-relaxed text-gray-800">
             O carro recomendado está em{" "}
@@ -214,7 +217,7 @@ export function CarResultsFeature() {
 
       {/* Closest option card */}
       {!isBrandMode && aiResult?.closestOption && (
-        <Card className="flex gap-4 border-2 border-blue-300 bg-blue-50 p-4" shadow="md">
+        <Card className="flex gap-4 border-2 border-blue-300 bg-blue-50 p-4 animate-fade-in-up" shadow="md">
           <div className="h-[120px] w-[200px] shrink-0 rounded-xl bg-blue-100 overflow-hidden">
             <img
               src={aiResult.closestOption.car.image || `/img/${aiResult.closestOption.car.id}/1.png`}
@@ -290,24 +293,43 @@ export function CarResultsFeature() {
 
           {/* Loading state */}
           {loading && (
-            <Card className="flex items-center justify-center gap-3 p-8">
-              <Sparkles size={20} className="animate-pulse text-violet-600" />
-              <span className="text-sm text-gray-600">
-                A IA está analisando sua busca...
-              </span>
-            </Card>
+            <>
+              <Card className="flex items-center gap-3 border-violet-200 bg-violet-50 p-3">
+                <Sparkles size={18} className="animate-pulse text-violet-600" />
+                <span className="text-sm text-gray-600">
+                  A IA está analisando sua busca...
+                </span>
+              </Card>
+              {Array.from({ length: 4 }).map((_, i) => (
+                <Card key={i} className="flex gap-4 p-3 animate-pulse" shadow="md">
+                  <div className="h-[140px] w-[220px] shrink-0 rounded-xl bg-gray-200" />
+                  <div className="flex flex-1 flex-col gap-3 py-1">
+                    <div className="h-4 w-3/5 rounded bg-gray-200" />
+                    <div className="h-3 w-2/5 rounded bg-gray-100" />
+                    <div className="mt-auto flex items-center justify-between">
+                      <div className="flex flex-col gap-1.5">
+                        <div className="h-4 w-24 rounded bg-gray-200" />
+                        <div className="h-3 w-16 rounded bg-gray-100" />
+                      </div>
+                      <div className="h-8 w-24 rounded-full bg-gray-200" />
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </>
           )}
 
           {/* Car result cards */}
           {!loading &&
-            filtered.map((car) => (
+            filtered.map((car, i) => (
               <Card
                 key={`${car.Name}-${car.Model}-${car.index}`}
                 className={
                   car.isSpecialOffer
-                    ? "flex gap-4 border-2 border-amber-300 bg-amber-50/50 p-3"
-                    : "flex gap-4 p-3"
+                    ? "flex gap-4 border-2 border-amber-300 bg-amber-50/50 p-3 animate-fade-in-up"
+                    : "flex gap-4 p-3 animate-fade-in-up"
                 }
+                style={{ animationDelay: `${i * 60}ms` }}
                 shadow="md"
               >
                 {car.Image ? (

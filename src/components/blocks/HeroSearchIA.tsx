@@ -17,8 +17,11 @@ export function HeroSearchIA({ onSearch }: HeroSearchIAProps) {
   const [query, setQuery] = useState("");
   const [selectedState, setSelectedState] = useState<string>("Todos");
   const [useAI, setUseAI] = useState<boolean>(true);
+  const [isSearching, setIsSearching] = useState(false);
 
   const handleSubmit = () => {
+    if (isSearching) return;
+    setIsSearching(true);
     const state = selectedState === "Todos" ? undefined : selectedState;
     const finalQuery =
       useAI ? query || "Carro confortável para família na cidade" : query;
@@ -89,7 +92,7 @@ export function HeroSearchIA({ onSearch }: HeroSearchIAProps) {
 
         {/* CTA */}
         <div className="flex justify-center">
-          <Button size="lg" onClick={handleSubmit}>
+          <Button size="lg" onClick={handleSubmit} loading={isSearching}>
             Buscar
           </Button>
         </div>

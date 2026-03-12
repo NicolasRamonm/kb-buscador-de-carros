@@ -28,7 +28,12 @@ export function CarGrid({ cars, onSeeAll }: CarGridProps) {
 
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {cars.map((car, index) => (
-          <Link key={`${car.Name}-${car.Model}-${index}`} href={`/detalhe?id=${index}`}>
+          <Link
+            key={`${car.Name}-${car.Model}-${index}`}
+            href={`/detalhe?id=${index}`}
+            className="animate-fade-in-up"
+            style={{ animationDelay: `${index * 60}ms` }}
+          >
             <Card className="overflow-hidden transition-shadow hover:shadow-md">
               {car.Image && car.Image !== "exemplo.png" ? (
                 <img

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Send } from "lucide-react";
 import { BackNav } from "@/components/blocks/BackNav";
@@ -38,6 +38,17 @@ export function PaymentSimulationFeature() {
     const withinLimit = monthly <= incomeLimit;
     return { monthly: Math.round(monthly), withinLimit, incomeLimit };
   }, [car, entry, term, income, maxPercent]);
+
+  const [flashKey, setFlashKey] = useState(0);
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    setFlashKey((k) => k + 1);
+  }, [simulation?.monthly]);
 
   if (!car || !simulation) return null;
 
@@ -163,7 +174,14 @@ export function PaymentSimulationFeature() {
 
         {/* Right column */}
         <div className="flex w-[360px] shrink-0 flex-col gap-4">
-          <Card className="flex flex-col gap-2.5 rounded-2xl p-[18px]" shadow="lg">
+          <Card
+            key={flashKey}
+            className={clsx(
+              "flex flex-col gap-2.5 rounded-2xl p-[18px] transition-shadow",
+              flashKey > 0 && "animate-highlight-flash"
+            )}
+            shadow="lg"
+          >
             <span className="text-xs font-semibold text-blue-600">
               Simulação de financiamento
             </span>

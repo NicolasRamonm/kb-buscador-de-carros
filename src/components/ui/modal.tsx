@@ -1,6 +1,6 @@
 "use client";
 
-import { type ReactNode, useEffect } from "react";
+import { type ReactNode, useEffect, useState } from "react";
 import { X } from "lucide-react";
 import clsx from "clsx";
 
@@ -11,6 +11,22 @@ interface ModalProps {
 }
 
 export function Modal({ open, onClose, children }: ModalProps) {
+  const [mounted, setMounted] = useState(false);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (open) {
+      setMounted(true);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => setVisible(true));
+      });
+    } else {
+      setVisible(false);
+      const timer = setTimeout(() => setMounted(false), 200);
+      return () => clearTimeout(timer);
+    }
+  }, [open]);
+
   useEffect(() => {
     if (!open) return;
     const handler = (e: KeyboardEvent) => {
@@ -20,17 +36,23 @@ export function Modal({ open, onClose, children }: ModalProps) {
     return () => document.removeEventListener("keydown", handler);
   }, [open, onClose]);
 
-  if (!open) return null;
+  if (!mounted) return null;
 
   return (
     <div
       className={clsx(
-        "fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+        "fixed inset-0 z-50 flex items-center justify-center transition-colors duration-200",
+        visible ? "bg-black/50" : "bg-black/0"
       )}
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-[520px] rounded-[20px] bg-white p-6"
+        className={clsx(
+          "relative w-full max-w-[520px] rounded-[20px] bg-white p-6 transition-all duration-200",
+          visible
+            ? "scale-100 opacity-100"
+            : "scale-95 opacity-0"
+        )}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-4 flex justify-end">
