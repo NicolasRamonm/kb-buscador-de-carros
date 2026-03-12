@@ -352,10 +352,6 @@ img, video {
   width: 1.75rem;
 }
 
-.w-8 {
-  width: 2rem;
-}
-
 .w-\[120px\] {
   width: 120px;
 }
@@ -378,6 +374,10 @@ img, video {
 
 .w-\[640px\] {
   width: 640px;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .w-full {

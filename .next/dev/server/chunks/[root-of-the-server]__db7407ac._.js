@@ -90,6 +90,23 @@ function getMimeType(ext) {
 async function GET(_req, { params }) {
     try {
         const { id, index } = await params;
+        // Caso especial: logo do site em /img/logo/logo.png
+        if (id === "logo") {
+            const logoPath = __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].join(process.cwd(), "src", "backend", "data", "img", "logo", "logo.png");
+            if (!__TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["default"].existsSync(logoPath)) {
+                return new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"]("Not found", {
+                    status: 404
+                });
+            }
+            const fileBuffer = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["default"].promises.readFile(logoPath);
+            return new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"](fileBuffer, {
+                status: 200,
+                headers: {
+                    "Content-Type": "image/png",
+                    "Cache-Control": "public, max-age=31536000, immutable"
+                }
+            });
+        }
         const folder = mapIdToFolder(id);
         if (!folder) {
             return new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"]("Not found", {
