@@ -765,7 +765,16 @@ function CarResultsFeature() {
                 shadow: "md",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "h-[120px] w-[200px] shrink-0 rounded-xl bg-amber-100"
+                        className: "h-[120px] w-[200px] shrink-0 rounded-xl bg-amber-100 overflow-hidden",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                            src: aiResult.specialOffer.car.image || `/img/${aiResult.specialOffer.car.id}/1.png`,
+                            alt: aiResult.specialOffer.car.fullName,
+                            className: "h-full w-full object-cover"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
+                            lineNumber: 153,
+                            columnNumber: 13
+                        }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
                         lineNumber: 152,
@@ -782,7 +791,7 @@ function CarResultsFeature() {
                                         children: aiResult.specialOffer.car.fullName
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                        lineNumber: 155,
+                                        lineNumber: 161,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -790,13 +799,13 @@ function CarResultsFeature() {
                                         children: aiResult.specialOffer.tag
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                        lineNumber: 158,
+                                        lineNumber: 164,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                lineNumber: 154,
+                                lineNumber: 160,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -815,7 +824,7 @@ function CarResultsFeature() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                lineNumber: 160,
+                                lineNumber: 166,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -829,7 +838,7 @@ function CarResultsFeature() {
                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$format$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatPrice"])(aiResult.specialOffer.car.price)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                lineNumber: 168,
+                                                lineNumber: 174,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -837,13 +846,13 @@ function CarResultsFeature() {
                                                 children: aiResult.specialOffer.car.location
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                lineNumber: 171,
+                                                lineNumber: 177,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                        lineNumber: 167,
+                                        lineNumber: 173,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -853,19 +862,19 @@ function CarResultsFeature() {
                                         children: "Ver condições"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                        lineNumber: 175,
+                                        lineNumber: 181,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                lineNumber: 166,
+                                lineNumber: 172,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                        lineNumber: 153,
+                        lineNumber: 159,
                         columnNumber: 11
                     }, this)
                 ]
@@ -882,7 +891,7 @@ function CarResultsFeature() {
                         className: "mt-0.5 shrink-0 text-blue-600"
                     }, void 0, false, {
                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                        lineNumber: 190,
+                        lineNumber: 196,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -895,7 +904,7 @@ function CarResultsFeature() {
                                 children: aiResult.popups.locationHintData.recommendedCarState
                             }, void 0, false, {
                                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                lineNumber: 193,
+                                lineNumber: 199,
                                 columnNumber: 13
                             }, this),
                             ".",
@@ -903,13 +912,13 @@ function CarResultsFeature() {
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                        lineNumber: 191,
+                        lineNumber: 197,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                lineNumber: 189,
+                lineNumber: 195,
                 columnNumber: 9
             }, this),
             !isBrandMode && aiResult?.closestOption && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -917,10 +926,19 @@ function CarResultsFeature() {
                 shadow: "md",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "h-[120px] w-[200px] shrink-0 rounded-xl bg-blue-100"
+                        className: "h-[120px] w-[200px] shrink-0 rounded-xl bg-blue-100 overflow-hidden",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                            src: aiResult.closestOption.car.image || `/img/${aiResult.closestOption.car.id}/1.png`,
+                            alt: aiResult.closestOption.car.fullName,
+                            className: "h-full w-full object-cover"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
+                            lineNumber: 214,
+                            columnNumber: 13
+                        }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                        lineNumber: 207,
+                        lineNumber: 213,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -934,7 +952,7 @@ function CarResultsFeature() {
                                         children: aiResult.closestOption.car.fullName
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                        lineNumber: 210,
+                                        lineNumber: 222,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -942,13 +960,13 @@ function CarResultsFeature() {
                                         children: "Opção mais próxima"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                        lineNumber: 213,
+                                        lineNumber: 225,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                lineNumber: 209,
+                                lineNumber: 221,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -967,7 +985,7 @@ function CarResultsFeature() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                lineNumber: 215,
+                                lineNumber: 227,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -975,7 +993,7 @@ function CarResultsFeature() {
                                 children: aiResult.closestOption.reason
                             }, void 0, false, {
                                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                lineNumber: 221,
+                                lineNumber: 233,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -989,7 +1007,7 @@ function CarResultsFeature() {
                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$format$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatPrice"])(aiResult.closestOption.car.price)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                lineNumber: 226,
+                                                lineNumber: 238,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -997,13 +1015,13 @@ function CarResultsFeature() {
                                                 children: aiResult.closestOption.car.location
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                lineNumber: 229,
+                                                lineNumber: 241,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                        lineNumber: 225,
+                                        lineNumber: 237,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1013,30 +1031,30 @@ function CarResultsFeature() {
                                             children: "Ver detalhes"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                            lineNumber: 234,
+                                            lineNumber: 246,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                        lineNumber: 233,
+                                        lineNumber: 245,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                lineNumber: 224,
+                                lineNumber: 236,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                        lineNumber: 208,
+                        lineNumber: 220,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                lineNumber: 206,
+                lineNumber: 212,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1052,7 +1070,7 @@ function CarResultsFeature() {
                         userState: userState || undefined
                     }, void 0, false, {
                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                        lineNumber: 243,
+                        lineNumber: 255,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1066,7 +1084,7 @@ function CarResultsFeature() {
                                         children: isBrandMode ? "Todos os carros da marca" : aiResult ? "Ordenado por relevância da IA" : "Ordenado por melhor combinação para você"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                        lineNumber: 256,
+                                        lineNumber: 268,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1076,18 +1094,18 @@ function CarResultsFeature() {
                                             children: isBrandMode ? "Filtro por marca" : aiResult ? "Relevância IA" : "Preço (menor primeiro)"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                            lineNumber: 264,
+                                            lineNumber: 276,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                        lineNumber: 263,
+                                        lineNumber: 275,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                lineNumber: 255,
+                                lineNumber: 267,
                                 columnNumber: 11
                             }, this),
                             loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -1098,7 +1116,7 @@ function CarResultsFeature() {
                                         className: "animate-pulse text-violet-600"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                        lineNumber: 277,
+                                        lineNumber: 289,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1106,13 +1124,13 @@ function CarResultsFeature() {
                                         children: "A IA está analisando sua busca..."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                        lineNumber: 278,
+                                        lineNumber: 290,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                lineNumber: 276,
+                                lineNumber: 288,
                                 columnNumber: 13
                             }, this),
                             !loading && filtered.map((car)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -1125,13 +1143,13 @@ function CarResultsFeature() {
                                             className: car.isSpecialOffer ? "h-[140px] w-[220px] shrink-0 rounded-xl object-cover" : "h-[140px] w-[220px] shrink-0 rounded-xl object-cover"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                            lineNumber: 297,
+                                            lineNumber: 309,
                                             columnNumber: 19
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: car.isSpecialOffer ? "h-[140px] w-[220px] shrink-0 rounded-xl bg-amber-100" : "h-[140px] w-[220px] shrink-0 rounded-xl bg-gray-200"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                            lineNumber: 307,
+                                            lineNumber: 319,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1149,7 +1167,7 @@ function CarResultsFeature() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                            lineNumber: 317,
+                                                            lineNumber: 329,
                                                             columnNumber: 21
                                                         }, this),
                                                         car.isRecommended && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1157,7 +1175,7 @@ function CarResultsFeature() {
                                                             children: "Recomendado pela IA"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                            lineNumber: 321,
+                                                            lineNumber: 333,
                                                             columnNumber: 23
                                                         }, this),
                                                         car.isSpecialOffer && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1165,13 +1183,13 @@ function CarResultsFeature() {
                                                             children: "Condições especiais para você"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                            lineNumber: 324,
+                                                            lineNumber: 336,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                    lineNumber: 316,
+                                                    lineNumber: 328,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1190,7 +1208,7 @@ function CarResultsFeature() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                    lineNumber: 327,
+                                                    lineNumber: 339,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1204,7 +1222,7 @@ function CarResultsFeature() {
                                                                     children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$format$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatPrice"])(car.Price)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                                    lineNumber: 337,
+                                                                    lineNumber: 349,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1212,13 +1230,13 @@ function CarResultsFeature() {
                                                                     children: car.Location
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                                    lineNumber: 346,
+                                                                    lineNumber: 358,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                            lineNumber: 336,
+                                                            lineNumber: 348,
                                                             columnNumber: 21
                                                         }, this),
                                                         car.isSpecialOffer ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1228,7 +1246,7 @@ function CarResultsFeature() {
                                                             children: "Ver condições"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                            lineNumber: 351,
+                                                            lineNumber: 363,
                                                             columnNumber: 23
                                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                             href: `/detalhe?id=${car.index}`,
@@ -1237,30 +1255,30 @@ function CarResultsFeature() {
                                                                 children: "Ver detalhes"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                                lineNumber: 360,
+                                                                lineNumber: 372,
                                                                 columnNumber: 25
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                            lineNumber: 359,
+                                                            lineNumber: 371,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                    lineNumber: 335,
+                                                    lineNumber: 347,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                            lineNumber: 315,
+                                            lineNumber: 327,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, `${car.Name}-${car.Model}-${car.index}`, true, {
                                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                    lineNumber: 287,
+                                    lineNumber: 299,
                                     columnNumber: 15
                                 }, this)),
                             !loading && filtered.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -1268,19 +1286,19 @@ function CarResultsFeature() {
                                 children: "Nenhum carro encontrado nessa faixa de preço. Ajuste os filtros para ver mais opções."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                lineNumber: 369,
+                                lineNumber: 381,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                        lineNumber: 253,
+                        lineNumber: 265,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                lineNumber: 242,
+                lineNumber: 254,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$modal$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Modal"], {
@@ -1294,7 +1312,7 @@ function CarResultsFeature() {
                             children: "Aviso de preço"
                         }, void 0, false, {
                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                            lineNumber: 380,
+                            lineNumber: 392,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1302,7 +1320,7 @@ function CarResultsFeature() {
                             children: "O carro está acima do seu orçamento"
                         }, void 0, false, {
                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                            lineNumber: 383,
+                            lineNumber: 395,
                             columnNumber: 11
                         }, this),
                         aiResult?.popups.priceExceededData && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1320,7 +1338,7 @@ function CarResultsFeature() {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                            lineNumber: 387,
+                            lineNumber: 399,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1328,18 +1346,18 @@ function CarResultsFeature() {
                             children: "Entendi"
                         }, void 0, false, {
                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                            lineNumber: 395,
+                            lineNumber: 407,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                    lineNumber: 379,
+                    lineNumber: 391,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                lineNumber: 378,
+                lineNumber: 390,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$modal$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Modal"], {
@@ -1353,7 +1371,7 @@ function CarResultsFeature() {
                             children: "Aviso de distância"
                         }, void 0, false, {
                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                            lineNumber: 405,
+                            lineNumber: 417,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1361,7 +1379,7 @@ function CarResultsFeature() {
                             children: "O carro recomendado está distante"
                         }, void 0, false, {
                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                            lineNumber: 408,
+                            lineNumber: 420,
                             columnNumber: 11
                         }, this),
                         aiResult?.popups.distanceWarningData && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1377,7 +1395,7 @@ function CarResultsFeature() {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                            lineNumber: 412,
+                            lineNumber: 424,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1385,18 +1403,18 @@ function CarResultsFeature() {
                             children: "Entendi"
                         }, void 0, false, {
                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                            lineNumber: 419,
+                            lineNumber: 431,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                    lineNumber: 404,
+                    lineNumber: 416,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                lineNumber: 400,
+                lineNumber: 412,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$modal$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Modal"], {
@@ -1410,7 +1428,7 @@ function CarResultsFeature() {
                             children: "Condições especiais"
                         }, void 0, false, {
                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                            lineNumber: 429,
+                            lineNumber: 441,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1418,7 +1436,7 @@ function CarResultsFeature() {
                             children: "Condições especiais para você"
                         }, void 0, false, {
                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                            lineNumber: 432,
+                            lineNumber: 444,
                             columnNumber: 11
                         }, this),
                         aiResult?.specialOffer && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -1428,7 +1446,7 @@ function CarResultsFeature() {
                                     children: "Este modelo está acima da faixa que você buscou, mas nossa IA identificou que ele pode caber no seu bolso através de condições especiais como consórcio ou financiamento."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                    lineNumber: 437,
+                                    lineNumber: 449,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1441,7 +1459,7 @@ function CarResultsFeature() {
                                                     children: aiResult.specialOffer.car.fullName
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                    lineNumber: 444,
+                                                    lineNumber: 456,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1449,13 +1467,13 @@ function CarResultsFeature() {
                                                     children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$format$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatPrice"])(aiResult.specialOffer.car.price)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                    lineNumber: 447,
+                                                    lineNumber: 459,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                            lineNumber: 443,
+                                            lineNumber: 455,
                                             columnNumber: 17
                                         }, this),
                                         aiResult.popups.priceExceededData && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1466,7 +1484,7 @@ function CarResultsFeature() {
                                                     children: "Seu orçamento"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                    lineNumber: 453,
+                                                    lineNumber: 465,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1474,19 +1492,19 @@ function CarResultsFeature() {
                                                     children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$format$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatPrice"])(aiResult.popups.priceExceededData.requestedMax)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                    lineNumber: 454,
+                                                    lineNumber: 466,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                            lineNumber: 452,
+                                            lineNumber: 464,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                    lineNumber: 442,
+                                    lineNumber: 454,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1500,7 +1518,7 @@ function CarResultsFeature() {
                                                     children: "Simular financiamento automático"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                    lineNumber: 462,
+                                                    lineNumber: 474,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1508,13 +1526,13 @@ function CarResultsFeature() {
                                                     children: "Parcelas flexíveis em bancos parceiros."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                    lineNumber: 465,
+                                                    lineNumber: 477,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                            lineNumber: 461,
+                                            lineNumber: 473,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1525,7 +1543,7 @@ function CarResultsFeature() {
                                                     children: "Ver opções de consórcio"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                    lineNumber: 470,
+                                                    lineNumber: 482,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1533,19 +1551,19 @@ function CarResultsFeature() {
                                                     children: "Consórcio sem juros, com carta de crédito."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                    lineNumber: 473,
+                                                    lineNumber: 485,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                            lineNumber: 469,
+                                            lineNumber: 481,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                    lineNumber: 460,
+                                    lineNumber: 472,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1557,7 +1575,7 @@ function CarResultsFeature() {
                                             children: "Fechar"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                            lineNumber: 479,
+                                            lineNumber: 491,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1566,18 +1584,18 @@ function CarResultsFeature() {
                                                 children: "Simular agora"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                                lineNumber: 488,
+                                                lineNumber: 500,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                            lineNumber: 485,
+                                            lineNumber: 497,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                                    lineNumber: 478,
+                                    lineNumber: 490,
                                     columnNumber: 15
                                 }, this)
                             ]
@@ -1585,12 +1603,12 @@ function CarResultsFeature() {
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                    lineNumber: 428,
+                    lineNumber: 440,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/features/car-results/CarResultsFeature.tsx",
-                lineNumber: 424,
+                lineNumber: 436,
                 columnNumber: 7
             }, this)
         ]

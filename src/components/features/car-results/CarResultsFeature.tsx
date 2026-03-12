@@ -149,7 +149,13 @@ export function CarResultsFeature() {
       {/* Special Offer Card */}
       {!isBrandMode && aiResult?.specialOffer && (
         <Card className="flex gap-4 border-2 border-amber-300 bg-amber-50 p-4" shadow="md">
-          <div className="h-[120px] w-[200px] shrink-0 rounded-xl bg-amber-100" />
+          <div className="h-[120px] w-[200px] shrink-0 rounded-xl bg-amber-100 overflow-hidden">
+            <img
+              src={aiResult.specialOffer.car.image || `/img/${aiResult.specialOffer.car.id}/1.png`}
+              alt={aiResult.specialOffer.car.fullName}
+              className="h-full w-full object-cover"
+            />
+          </div>
           <div className="flex flex-1 flex-col gap-2">
             <div className="flex items-center gap-2">
               <h3 className="text-[15px] font-semibold text-gray-900">
@@ -204,7 +210,13 @@ export function CarResultsFeature() {
       {/* Closest option card */}
       {!isBrandMode && aiResult?.closestOption && (
         <Card className="flex gap-4 border-2 border-blue-300 bg-blue-50 p-4" shadow="md">
-          <div className="h-[120px] w-[200px] shrink-0 rounded-xl bg-blue-100" />
+          <div className="h-[120px] w-[200px] shrink-0 rounded-xl bg-blue-100 overflow-hidden">
+            <img
+              src={aiResult.closestOption.car.image || `/img/${aiResult.closestOption.car.id}/1.png`}
+              alt={aiResult.closestOption.car.fullName}
+              className="h-full w-full object-cover"
+            />
+          </div>
           <div className="flex flex-1 flex-col gap-2">
             <div className="flex items-center gap-2">
               <h3 className="text-[15px] font-semibold text-gray-900">
