@@ -1,87 +1,13 @@
-[00:00:01.565] Server  LOG      ✓ Ready in 1009ms
-[00:00:06.150] Server  ERROR    ⨯ ./src/app/icon.tsx:1:10
-Ecmascript file had an error
-> 1 | import { ImageResponse } from "next/server";
-    |          ^^^^^^^^^^^^^
-  2 |
-  3 | export const size = {
-  4 |   width: 32,
-
-ImageResponse moved from "next/server" to "next/og" since Next.js 14, please import from "next/og" instead
-
-Import trace:
-  Server Component:
-    ./src/app/icon.tsx
-    ./src/app/icon--metadata.js
-
-
-[00:00:07.951] Browser ERROR   uncaughtError: Error: ./src/app/icon.tsx:1:10
-Ecmascript file had an error
-> 1 | import { ImageResponse } from "next/server";
-    |          ^^^^^^^^^^^^^
-  2 |
-  3 | export const size = {
-  4 |   width: 32,
-
-ImageResponse moved from "next/server" to "next/og" since Next.js 14, please import from "next/og" instead
-
-Import trace:
-  Server Component:
-    ./src/app/icon.tsx
-    ./src/app/icon--metadata.js
-
-
-[00:00:08.202] Browser ERROR   ./src/app/icon.tsx:1:10
-Ecmascript file had an error
-> 1 | import { ImageResponse } from "next/server";
-    |          ^^^^^^^^^^^^^
-  2 |
-  3 | export const size = {
-  4 |   width: 32,
-
-ImageResponse moved from "next/server" to "next/og" since Next.js 14, please import from "next/og" instead
-
-Import trace:
-  Server Component:
-    ./src/app/icon.tsx
-    ./src/app/icon--metadata.js
-[00:00:08.622] Browser ERROR   ./src/app/icon.tsx:1:10
-Ecmascript file had an error
-> 1 | import { ImageResponse } from "next/server";
-    |          ^^^^^^^^^^^^^
-  2 |
-  3 | export const size = {
-  4 |   width: 32,
-
-ImageResponse moved from "next/server" to "next/og" since Next.js 14, please import from "next/og" instead
-
-Import trace:
-  Server Component:
-    ./src/app/icon.tsx
-    ./src/app/icon--metadata.js
-[00:00:32.102] Server  LOG      ✓ Compiled in 113ms
-[00:00:33.021] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:49.433] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:52.532] Server  LOG      ✓ Compiled in 76ms
-[00:08:12.902] Browser ERROR   ./src/app/layout.tsx:9:10
-Parsing ecmascript source code failed
-   7 |
-   8 | export const metadata: Metadata = {
->  9 |   title: ",
-     |          ^^
-  10 |   description: "Encontre o carro ideal com ajuda de IA",
-  11 | };
-  12 |
-
-Unterminated string constant
-[00:08:14.912] Browser ERROR   ./src/app/layout.tsx:9:12
-Parsing ecmascript source code failed
-   7 |
-   8 | export const metadata: Metadata = {
->  9 |   title: """,
-     |            ^^
-  10 |   description: "Encontre o carro ideal com ajuda de IA",
-  11 | };
-  12 |
-
-Unterminated string constant
+[00:00:01.847] Server  LOG      ✓ Ready in 1150ms
+[00:00:08.607] Server  LOG      ○ Compiling / ...
+[00:00:13.757] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:33.200] Server  LOG      ✓ Compiled in 351ms
+[00:02:50.856] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:15.413] Server  LOG      ✓ Compiled in 60ms
+[00:05:51.951] Server  LOG      ✓ Compiled in 79ms
+[00:05:54.265] Server  LOG      ✓ Compiled in 105ms
+[00:13:50.170] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:00.316] Server  LOG      ✓ Compiled in 61ms
+[00:14:20.040] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:40.835] Server  LOG      ✓ Compiled in 170ms
+[00:19:31.871] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

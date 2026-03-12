@@ -42,12 +42,18 @@ export function AppTopBar() {
       </nav>
 
       <div className="flex items-center gap-5">
-        <button className="text-gray-500 hover:text-gray-700">
+        <Link
+          href="/como-funciona"
+          className="text-gray-500 hover:text-gray-700"
+        >
           <Heart size={22} />
-        </button>
-        <button className="text-gray-500 hover:text-gray-700">
+        </Link>
+        <Link
+          href="/como-funciona"
+          className="text-gray-500 hover:text-gray-700"
+        >
           <MessageSquare size={22} />
-        </button>
+        </Link>
       </div>
     </header>
   );
