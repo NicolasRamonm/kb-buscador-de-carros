@@ -18,8 +18,6 @@ export function CarDetailFeature() {
   const carIndex = idParam ? parseInt(idParam, 10) : 1;
   const car = getCarByIndex(carIndex) ?? getAllCars()[0];
 
-  const [showModal, setShowModal] = useState(false);
-
   if (!car) return null;
 
   const fullTitle = `${car.Name} ${car.Model}`;
@@ -30,6 +28,11 @@ export function CarDetailFeature() {
           (idx) => `/img/${carId}/${idx}.png`
         )
       : [car.Image].filter(Boolean);
+
+  const [showModal, setShowModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string>(
+    car.Image || imageUrls[0] || ""
+  );
 
   return (
     <>
@@ -49,9 +52,9 @@ export function CarDetailFeature() {
         <div className="flex gap-8">
           {/* Media column */}
           <div className="flex w-[640px] shrink-0 flex-col gap-3">
-            {car.Image ? (
+            {selectedImage ? (
               <img
-                src={car.Image}
+                src={selectedImage}
                 alt={fullTitle}
                 className="h-[360px] w-full rounded-2xl object-cover"
               />
@@ -60,17 +63,26 @@ export function CarDetailFeature() {
             )}
             <div className="flex gap-2">
               {imageUrls.map((url, idx) => (
-                <div key={url} className="h-20 flex-1">
+                <button
+                  key={url}
+                  type="button"
+                  onClick={() => setSelectedImage(url)}
+                  className={`h-20 flex-1 overflow-hidden rounded-xl border transition-colors ${
+                    selectedImage === url
+                      ? "border-blue-500"
+                      : "border-transparent hover:border-gray-300"
+                  }`}
+                >
                   <img
                     src={url}
                     alt={`${fullTitle} imagem ${idx + 1}`}
-                    className="h-full w-full rounded-xl object-cover"
+                    className="h-full w-full object-cover"
                     onError={(e) => {
                       (e.currentTarget as HTMLImageElement).style.display =
                         "none";
                     }}
                   />
-                </div>
+                </button>
               ))}
             </div>
           </div>
