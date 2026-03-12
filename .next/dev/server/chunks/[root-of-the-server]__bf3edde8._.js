@@ -652,10 +652,39 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$openai$2f$index$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/openai/index.mjs [app-route] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$openai$2f$client$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$export__OpenAI__as__default$3e$__ = __turbopack_context__.i("[project]/node_modules/openai/client.mjs [app-route] (ecmascript) <export OpenAI as default>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$backend$2f$data$2f$cars$2d$enriched$2e$json__$28$json$29$__ = __turbopack_context__.i("[project]/src/backend/data/cars-enriched.json (json)");
+;
 ;
 const openai = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$openai$2f$client$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$export__OpenAI__as__default$3e$__["default"]({
     apiKey: process.env.OPENAI_API_KEY
 });
+const allCars = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$backend$2f$data$2f$cars$2d$enriched$2e$json__$28$json$29$__["default"];
+function findEnrichedCarByModel(modelName) {
+    if (!modelName) return undefined;
+    const target = modelName.toLowerCase();
+    return allCars.find((c)=>c.model.toLowerCase() === target);
+}
+function getAppliedPriceRange(intent) {
+    const min = intent.minPrice ?? 0;
+    // Quando o usuário busca um modelo específico, usamos o valor real
+    // desse carro como limite superior do filtro, em vez do orçamento máximo.
+    if (intent.model) {
+        const modelCar = findEnrichedCarByModel(intent.model);
+        if (modelCar) {
+            return [
+                min,
+                modelCar.price
+            ];
+        }
+    }
+    if (intent.maxPrice) {
+        return [
+            min,
+            intent.maxPrice
+        ];
+    }
+    return undefined;
+}
 async function buildSearchResponse(recommendation, allScoredCars, intent) {
     const explanation = recommendation.recommended ? await generateExplanation(recommendation, intent) : "Não encontrei carros que correspondam exatamente à sua busca.";
     const alternativeReasons = await generateAlternativeReasons(recommendation.alternatives, intent);
@@ -676,10 +705,7 @@ async function buildSearchResponse(recommendation, allScoredCars, intent) {
         popups: recommendation.popups,
         aiSummary: explanation,
         appliedFilters: {
-            priceRange: intent.maxPrice ? [
-                intent.minPrice ?? 0,
-                intent.maxPrice
-            ] : undefined,
+            priceRange: getAppliedPriceRange(intent),
             categories: intent.categories,
             location: intent.location,
             brand: intent.brand,

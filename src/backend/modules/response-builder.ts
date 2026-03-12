@@ -1,12 +1,42 @@
 import OpenAI from "openai";
 import type {
+  EnrichedCar,
   ParsedIntent,
   RecommendationResult,
   SearchResponse,
   ScoredCar,
 } from "@/types/car";
+import carsEnriched from "@/backend/data/cars-enriched.json";
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
+const allCars = carsEnriched as EnrichedCar[];
+
+function findEnrichedCarByModel(modelName?: string): EnrichedCar | undefined {
+  if (!modelName) return undefined;
+  const target = modelName.toLowerCase();
+  return allCars.find((c) => c.model.toLowerCase() === target);
+}
+
+function getAppliedPriceRange(
+  intent: ParsedIntent
+): [number, number] | undefined {
+  const min = intent.minPrice ?? 0;
+
+  // Quando o usuário busca um modelo específico, usamos o valor real
+  // desse carro como limite superior do filtro, em vez do orçamento máximo.
+  if (intent.model) {
+    const modelCar = findEnrichedCarByModel(intent.model);
+    if (modelCar) {
+      return [min, modelCar.price];
+    }
+  }
+
+  if (intent.maxPrice) {
+    return [min, intent.maxPrice];
+  }
+
+  return undefined;
+}
 
 export async function buildSearchResponse(
   recommendation: RecommendationResult,
@@ -41,9 +71,7 @@ export async function buildSearchResponse(
     popups: recommendation.popups,
     aiSummary: explanation,
     appliedFilters: {
-      priceRange: intent.maxPrice
-        ? [intent.minPrice ?? 0, intent.maxPrice]
-        : undefined,
+      priceRange: getAppliedPriceRange(intent),
       categories: intent.categories,
       location: intent.location,
       brand: intent.brand,
