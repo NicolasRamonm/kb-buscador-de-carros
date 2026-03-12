@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Sparkles, MapPin } from "lucide-react";
 import { Chip } from "@/components/ui/chip";
 import { Button } from "@/components/ui/button";
-import { CAR_TYPES } from "@/config/constants";
 import { AVAILABLE_STATES } from "@/backend/data/city-state-map";
 
 const STATE_OPTIONS = ["Todos", ...AVAILABLE_STATES] as const;
@@ -15,7 +14,6 @@ interface HeroSearchIAProps {
 
 export function HeroSearchIA({ onSearch }: HeroSearchIAProps) {
   const [query, setQuery] = useState("");
-  const [activeType, setActiveType] = useState("Todos");
   const [selectedState, setSelectedState] = useState<string>("Todos");
 
   const handleSubmit = () => {
@@ -26,34 +24,17 @@ export function HeroSearchIA({ onSearch }: HeroSearchIAProps) {
   return (
     <div className="w-full max-w-[780px] rounded-2xl bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.05)] md:px-10">
       <div className="flex flex-col gap-5">
-        {/* Suggestion row */}
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-lg md:text-xl font-semibold text-gray-900">
-            Buscar
+          <span className="text-lg font-semibold text-gray-900 md:text-xl">
+            Buscar com IA
           </span>
           <Sparkles size={20} className="text-violet-600" />
-          <span className="text-base font-medium text-blue-600">
-            Corolla 2020 automático branco
-          </span>
-        </div>
-
-        {/* Category pills */}
-        <div className="flex flex-wrap items-center gap-2.5">
-          {CAR_TYPES.map((type) => (
-            <Chip
-              key={type}
-              active={type === activeType}
-              onClick={() => setActiveType(type)}
-            >
-              {type}
-            </Chip>
-          ))}
         </div>
 
         {/* State selector */}
         <div className="flex flex-wrap items-center gap-2.5">
           <MapPin size={16} className="shrink-0 text-gray-500" />
-          <span className="text-xs font-medium text-gray-600">Seu estado:</span>
+          <span className="text-xs font-medium text-gray-600">Estado de busca:</span>
           {STATE_OPTIONS.map((state) => (
             <Chip
               key={state}
