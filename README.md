@@ -84,7 +84,7 @@ No final dessa etapa, o sistema já tem uma representação estruturada da inten
 
 **Possíveis Críticas:** 
 - A arquitetura atual com certeza não era a forma mais simples de resolver a questão da busca de intenção e indicação de veículo correto, seria muito mais fácil passar o .json (Já que ele é pequeno) + o prompt/pergunta do usuário e devolver uma resposta estruturada chamando o card do carro por algum identificador, mas acredito que isso não apresentaria uma boa escalabilidade e funcionaria apenas para esse projeto de case, por isso escolhi fazer essa arquitetura, para colocar as ferramentas que realmente fariam sentido.
-- Base de dados: O cars.json ainda é a Base de dados **principal**, o enriched foi usado apenas para gerar as embeddings e para alguns pequenos detalhes na página de visualização do carro.
+- Base de dados: O `data/cars.json` ainda é a Base de dados **principal**, o enriched foi usado apenas para gerar as embeddings e para alguns pequenos detalhes na página de visualização do carro.
 
 **Pontos Atacados**
 - Prompts subjetivos não vão quebrar o sistema, algo bem subjetivo ainda terá uma resposta satisfatória por conta dos embeddings a partir do .json enriquecido.
@@ -131,7 +131,7 @@ No final dessa etapa, o sistema já tem uma representação estruturada da inten
 - **Backend**: Rotas `app/api` do Next.js, módulos próprios em `src/backend` para orquestrar fluxo de IA, filtros determinísticos, scoring e response builder.
 - **Banco de Dados**: Supabase (Postgres) com extensão **pgvector** para armazenar embeddings e fazer busca vetorial.
 - **Infra de IA**: OpenAI API (prompt interpreter, embeddings, recomendação híbrida).
-- **Dados**: Catálogo base em `cars.json` e versão enriquecida em `cars-enriched.json` para geração de embeddings e melhoria de contexto sem inflar o prompt.
+- **Dados**: Catálogo base em `data/cars.json` e versão enriquecida em `cars-enriched.json` para geração de embeddings e melhoria de contexto sem inflar o prompt.
 
 ## 2. User Experience
 

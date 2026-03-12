@@ -1,6 +1,6 @@
 import type { Car, SearchResponse, CarResponse } from "@/types/car";
 import enrichedCars from "../backend/data/cars-enriched.json";
-import catalogData from "../../cars.json";
+import catalogData from "../../data/cars.json";
 
 const cars: Car[] = enrichedCars.map((ec) => ({
   Name: ec.brand,

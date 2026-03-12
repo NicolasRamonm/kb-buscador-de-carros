@@ -1,4 +1,4 @@
-import catalogData from "../../cars.json";
+import catalogData from "../../data/cars.json";
 
 export const BRANDS = [...new Set(catalogData.map((c) => c.Name))] as const;
 

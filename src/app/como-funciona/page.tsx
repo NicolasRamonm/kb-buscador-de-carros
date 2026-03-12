@@ -16,7 +16,15 @@ export default function ComoFuncionaPage() {
         </p>
 
         <p className="text-sm text-gray-600 max-w-2xl">
-          Eu também criei um outro JSON, uma versão enriquecida, para melhorar essa inferência de intenção com IA. Ainda uso o cars.json como base de dados principal sempre que possível; é apenas na geração de embeddings que utilizo o cars-enriched.json, além de algumas informações extras nos anúncios.
+          Eu também criei um outro JSON, uma versão enriquecida, para melhorar essa inferência de intenção com IA. Ainda uso o{" "}
+          <code className="rounded bg-gray-100 px-1 py-0.5 text-[11px]">
+            data/cars.json
+          </code>{" "}
+          como base de dados principal sempre que possível; é apenas na geração de embeddings que utilizo o{" "}
+          <code className="rounded bg-gray-100 px-1 py-0.5 text-[11px]">
+            cars-enriched.json
+          </code>
+          , além de algumas informações extras nos anúncios.
         </p>
       </header>
 
