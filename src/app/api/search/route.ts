@@ -9,10 +9,11 @@ import { buildSearchResponse } from "@/backend/modules/response-builder";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { query, userLat, userLng } = body as {
+    const { query, userLat, userLng, userState } = body as {
       query: string;
       userLat?: number;
       userLng?: number;
+      userState?: string;
     };
 
     if (!query || typeof query !== "string") {
@@ -42,7 +43,8 @@ export async function POST(request: NextRequest) {
       intent,
       filterResult,
       userLat,
-      userLng
+      userLng,
+      userState
     );
 
     const response = await buildSearchResponse(

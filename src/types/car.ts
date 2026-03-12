@@ -83,6 +83,17 @@ export interface PopupFlags {
   };
   noResults: boolean;
   showFinancingPopup: boolean;
+  showLocationHint?: boolean;
+  locationHintData?: {
+    recommendedCarState: string;
+    userState: string;
+  };
+}
+
+export interface ClosestOption {
+  car: CarResponse;
+  score: number;
+  reason: string;
 }
 
 export interface SpecialOffer {
@@ -103,6 +114,7 @@ export interface SearchResponse {
     reason: string;
   }>;
   specialOffer: SpecialOffer | null;
+  closestOption?: ClosestOption | null;
   cars: CarResponse[];
   popups: PopupFlags;
   aiSummary: string;
@@ -139,5 +151,6 @@ export interface RecommendationResult {
   recommended: ScoredCar | null;
   alternatives: ScoredCar[];
   specialOffer: SpecialOffer | null;
+  closestOption?: ClosestOption | null;
   popups: PopupFlags;
 }

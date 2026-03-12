@@ -1,21 +1,26 @@
 "use client";
 
 import { useState } from "react";
-import { Sparkles } from "lucide-react";
+import { Sparkles, MapPin } from "lucide-react";
 import { Chip } from "@/components/ui/chip";
 import { Button } from "@/components/ui/button";
 import { CAR_TYPES } from "@/config/constants";
+import { AVAILABLE_STATES } from "@/backend/data/city-state-map";
+
+const STATE_OPTIONS = ["Todos", ...AVAILABLE_STATES] as const;
 
 interface HeroSearchIAProps {
-  onSearch: (query: string) => void;
+  onSearch: (query: string, userState?: string) => void;
 }
 
 export function HeroSearchIA({ onSearch }: HeroSearchIAProps) {
   const [query, setQuery] = useState("");
   const [activeType, setActiveType] = useState("Todos");
+  const [selectedState, setSelectedState] = useState<string>("Todos");
 
   const handleSubmit = () => {
-    onSearch(query || "Carro confortável para família na cidade");
+    const state = selectedState === "Todos" ? undefined : selectedState;
+    onSearch(query || "Carro confortável para família na cidade", state);
   };
 
   return (
@@ -41,6 +46,21 @@ export function HeroSearchIA({ onSearch }: HeroSearchIAProps) {
               onClick={() => setActiveType(type)}
             >
               {type}
+            </Chip>
+          ))}
+        </div>
+
+        {/* State selector */}
+        <div className="flex flex-wrap items-center gap-2.5">
+          <MapPin size={16} className="shrink-0 text-gray-500" />
+          <span className="text-xs font-medium text-gray-600">Seu estado:</span>
+          {STATE_OPTIONS.map((state) => (
+            <Chip
+              key={state}
+              active={state === selectedState}
+              onClick={() => setSelectedState(state)}
+            >
+              {state}
             </Chip>
           ))}
         </div>

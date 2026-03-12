@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
+import { Sparkles, MapPin } from "lucide-react";
 import { BackNav } from "@/components/blocks/BackNav";
 import { FiltersPanel } from "@/components/blocks/FiltersPanel";
 import { Card } from "@/components/ui/card";
@@ -18,6 +18,7 @@ export function CarResultsFeature() {
   const params = useSearchParams();
   const query = params.get("q") ?? "";
   const brandFilter = params.get("brand") ?? "";
+  const userState = params.get("state") ?? "";
 
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 200000]);
   const [carType, setCarType] = useState("");
@@ -32,7 +33,7 @@ export function CarResultsFeature() {
     let cancelled = false;
     setLoading(true);
 
-    searchCarsWithAI(query)
+    searchCarsWithAI(query, undefined, undefined, userState || undefined)
       .then((result) => {
         if (cancelled) return;
         setAiResult(result);
@@ -49,7 +50,7 @@ export function CarResultsFeature() {
       });
 
     return () => { cancelled = true; };
-  }, [query, brandFilter]);
+  }, [query, brandFilter, userState]);
 
   const brandCars = useMemo(() => {
     if (!brandFilter) return [];
@@ -181,6 +182,60 @@ export function CarResultsFeature() {
         </Card>
       )}
 
+      {/* Location hint banner */}
+      {!isBrandMode && aiResult?.popups.showLocationHint && aiResult.popups.locationHintData && (
+        <Card className="flex items-start gap-3 border-blue-200 bg-blue-50 p-4">
+          <MapPin size={18} className="mt-0.5 shrink-0 text-blue-600" />
+          <p className="text-[13px] leading-relaxed text-gray-800">
+            O carro recomendado está em{" "}
+            <span className="font-semibold">
+              {aiResult.popups.locationHintData.recommendedCarState}
+            </span>
+            .
+            {aiResult.closestOption
+              ? ` Encontramos uma opção no seu estado (${aiResult.popups.locationHintData.userState}) abaixo.`
+              : ` Não encontramos opções disponíveis em ${aiResult.popups.locationHintData.userState}.`}
+          </p>
+        </Card>
+      )}
+
+      {/* Closest option card */}
+      {!isBrandMode && aiResult?.closestOption && (
+        <Card className="flex gap-4 border-2 border-blue-300 bg-blue-50 p-4" shadow="md">
+          <div className="h-[120px] w-[200px] shrink-0 rounded-xl bg-blue-100" />
+          <div className="flex flex-1 flex-col gap-2">
+            <div className="flex items-center gap-2">
+              <h3 className="text-[15px] font-semibold text-gray-900">
+                {aiResult.closestOption.car.fullName}
+              </h3>
+              <Badge variant="info">Opção mais próxima</Badge>
+            </div>
+            <p className="text-xs text-gray-600">
+              {aiResult.closestOption.car.year} &bull;{" "}
+              {aiResult.closestOption.car.mileage.toLocaleString("pt-BR")} km &bull;{" "}
+              {aiResult.closestOption.car.transmission} &bull;{" "}
+              {aiResult.closestOption.car.fuel}
+            </p>
+            <p className="text-xs text-blue-700">
+              {aiResult.closestOption.reason}
+            </p>
+            <div className="mt-auto flex items-center justify-between">
+              <div className="flex flex-col gap-0.5">
+                <span className="text-base font-bold text-blue-600">
+                  {formatPrice(aiResult.closestOption.car.price)}
+                </span>
+                <span className="text-[11px] text-gray-500">
+                  {aiResult.closestOption.car.location}
+                </span>
+              </div>
+              <Link href={`/detalhe?id=${aiResult.closestOption.car.index}`}>
+                <Button size="sm">Ver detalhes</Button>
+              </Link>
+            </div>
+          </div>
+        </Card>
+      )}
+
       {/* Content */}
       <div className="flex gap-6">
         <FiltersPanel
@@ -190,6 +245,7 @@ export function CarResultsFeature() {
           carType={carType}
           onCarTypeChange={setCarType}
           onClear={handleClearFilters}
+          userState={userState || undefined}
         />
 
         <div className="flex flex-1 flex-col gap-4">

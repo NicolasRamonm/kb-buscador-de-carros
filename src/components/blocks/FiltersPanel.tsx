@@ -12,6 +12,7 @@ interface FiltersPanelProps {
   carType: string;
   onCarTypeChange: (type: string) => void;
   onClear: () => void;
+  userState?: string;
 }
 
 const TYPE_OPTIONS = ["Sedans", "SUVs"];
@@ -23,6 +24,7 @@ export function FiltersPanel({
   carType,
   onCarTypeChange,
   onClear,
+  userState,
 }: FiltersPanelProps) {
   return (
     <aside className="flex w-[260px] shrink-0 flex-col gap-4">
@@ -33,9 +35,11 @@ export function FiltersPanel({
         <span className="rounded-full bg-indigo-50 px-2.5 py-1 text-[11px] text-blue-700">
           Até {formatPrice(priceRange[1])}
         </span>
-        <span className="rounded-full bg-indigo-50 px-2.5 py-1 text-[11px] text-blue-700">
-          São Paulo e região
-        </span>
+        {userState && (
+          <span className="rounded-full bg-indigo-50 px-2.5 py-1 text-[11px] text-blue-700">
+            Estado: {userState}
+          </span>
+        )}
       </div>
 
       {/* Price range */}

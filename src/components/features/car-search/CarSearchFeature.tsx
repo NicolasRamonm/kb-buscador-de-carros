@@ -10,8 +10,10 @@ export function CarSearchFeature() {
   const router = useRouter();
   const cars = getAllCars();
 
-  const handleSearch = (query: string) => {
-    router.push(`/resultados?q=${encodeURIComponent(query)}`);
+  const handleSearch = (query: string, userState?: string) => {
+    const params = new URLSearchParams({ q: query });
+    if (userState) params.set("state", userState);
+    router.push(`/resultados?${params.toString()}`);
   };
 
   const handleSeeAll = () => {

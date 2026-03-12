@@ -1,5 +1,10 @@
 import { POPUP_THRESHOLDS, SPECIAL_OFFER } from "@/backend/config/weights";
 import { haversineDistance } from "./distance";
+import {
+  resolveCarState,
+  isCarLocal,
+  findClosestOption,
+} from "./location-resolver";
 import type {
   ScoredCar,
   ParsedIntent,
@@ -18,7 +23,8 @@ export function buildRecommendation(
   intent: ParsedIntent,
   filterResult: FilterResult,
   userLat?: number,
-  userLng?: number
+  userLng?: number,
+  userState?: string
 ): RecommendationResult {
   if (scoredCars.length === 0) {
     return {
@@ -59,7 +65,33 @@ export function buildRecommendation(
     userLng
   );
 
-  return { recommended, alternatives, specialOffer, popups };
+  const result: RecommendationResult = {
+    recommended,
+    alternatives,
+    specialOffer,
+    popups,
+  };
+
+  if (userState && recommended) {
+    const recIsLocal = isCarLocal(recommended.car.location, userState);
+
+    if (!recIsLocal) {
+      const closest = findClosestOption(
+        scoredCars,
+        recommended.car.id,
+        userState
+      );
+
+      result.closestOption = closest;
+      popups.showLocationHint = true;
+      popups.locationHintData = {
+        recommendedCarState: resolveCarState(recommended.car.location) ?? "",
+        userState,
+      };
+    }
+  }
+
+  return result;
 }
 
 function buildSpecialOffer(

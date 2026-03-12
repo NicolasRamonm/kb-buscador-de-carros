@@ -36,6 +36,7 @@ export async function buildSearchResponse(
       reason: alternativeReasons[i] || "Boa alternativa com base na sua busca.",
     })),
     specialOffer: recommendation.specialOffer,
+    closestOption: recommendation.closestOption ?? null,
     cars: allScoredCars.map((sc) => sc.car),
     popups: recommendation.popups,
     aiSummary: explanation,
