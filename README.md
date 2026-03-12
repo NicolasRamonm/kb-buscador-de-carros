@@ -23,6 +23,8 @@
 
 Acesse a plataforma clicando [aqui](https://cargen.vercel.app).
 
+(O botão de Info no canto superior esquerdo tem algumas informações da estrutura da plataforma)
+
 **Rodar localmente**
 
 Pré-requisitos:
