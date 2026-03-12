@@ -402,10 +402,6 @@ img, video {
   height: 1.75rem;
 }
 
-.h-8 {
-  height: 2rem;
-}
-
 .h-\[120px\] {
   height: 120px;
 }
@@ -456,10 +452,6 @@ img, video {
 
 .w-\[640px\] {
   width: 640px;
-}
-
-.w-auto {
-  width: auto;
 }
 
 .w-full {

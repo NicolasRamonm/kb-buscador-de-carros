@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Heart, MessageSquare } from "lucide-react";
@@ -20,11 +19,7 @@ export function AppTopBar() {
 
   return (
     <header className="flex h-14 items-center justify-between border-b border-gray-200 bg-white px-16">
-      <div className="flex items-center gap-2">
-        <Link href="/">
-          <Image src="/logo.png" alt="Logo" width={32} height={32} className="h-8 w-auto" />
-        </Link>
-      </div>
+      <div className="flex items-center gap-2" />
 
       <nav className="flex items-center gap-7">
         {NAV_LINKS.map(({ href, label, match }) => {
