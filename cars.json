@@ -1,0 +1,82 @@
+[
+  {
+    "id": "byd-dolphin",
+    "Name": "BYD",
+    "Model": "Dolphin",
+    "Image": "/img/byd-dolphin/1.png",
+    "Price": 99990,
+    "Location": "São Paulo"
+  },
+  {
+    "id": "toyota-corolla",
+    "Name": "Toyota",
+    "Model": "Corolla",
+    "Image": "/img/toyota-corolla/1.png",
+    "Price": 112000,
+    "Location": "São Paulo"
+  },
+  {
+    "id": "vw-tcross",
+    "Name": "Volkswagen",
+    "Model": "T-Cross",
+    "Image": "/img/vw-tcross/1.png",
+    "Price": 118500,
+    "Location": "Campinas"
+  },
+  {
+    "id": "honda-civic",
+    "Name": "Honda",
+    "Model": "Civic",
+    "Image": "/img/honda-civic/1.png",
+    "Price": 105000,
+    "Location": "Rio de Janeiro"
+  },
+  {
+    "id": "chevrolet-onix",
+    "Name": "Chevrolet",
+    "Model": "Onix",
+    "Image": "/img/chevrolet-onix/1.png",
+    "Price": 85000,
+    "Location": "Belo Horizonte"
+  },
+  {
+    "id": "hyundai-hb20",
+    "Name": "Hyundai",
+    "Model": "HB20",
+    "Image": "/img/hyundai-hb20/1.png",
+    "Price": 79000,
+    "Location": "São Paulo"
+  },
+  {
+    "id": "renault-kwid",
+    "Name": "Renault",
+    "Model": "Kwid",
+    "Image": "/img/renault-kwid/1.png",
+    "Price": 68990,
+    "Location": "Curitiba"
+  },
+  {
+    "id": "fiat-pulse",
+    "Name": "Fiat",
+    "Model": "Pulse",
+    "Image": "/img/fiat-pulse/1.png",
+    "Price": 96000,
+    "Location": "São Paulo"
+  },
+  {
+    "id": "jeep-renegade",
+    "Name": "Jeep",
+    "Model": "Renegade",
+    "Image": "/img/jeep-renegade/1.png",
+    "Price": 122000,
+    "Location": "Porto Alegre"
+  },
+  {
+    "id": "peugeot-208",
+    "Name": "Peugeot",
+    "Model": "208",
+    "Image": "/img/peugeot-208/1.png",
+    "Price": 87500,
+    "Location": "São Paulo"
+  }
+]
