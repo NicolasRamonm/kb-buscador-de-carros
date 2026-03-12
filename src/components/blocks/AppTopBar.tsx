@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Heart, MessageSquare } from "lucide-react";
+import { Info } from "lucide-react";
 import clsx from "clsx";
 
 const NAV_LINKS = [
@@ -46,13 +46,7 @@ export function AppTopBar() {
           href="/como-funciona"
           className="text-gray-500 hover:text-gray-700"
         >
-          <Heart size={22} />
-        </Link>
-        <Link
-          href="/como-funciona"
-          className="text-gray-500 hover:text-gray-700"
-        >
-          <MessageSquare size={22} />
+          <Info size={22} />
         </Link>
       </div>
     </header>
