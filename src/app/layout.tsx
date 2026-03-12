@@ -6,7 +6,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "KB Buscador de Carros",
+  title: "Cargen",
   description: "Encontre o carro ideal com ajuda de IA",
 };
 

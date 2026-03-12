@@ -1,11 +1,87 @@
-[00:00:01.653] Server  LOG      ✓ Ready in 1037ms
-[00:00:05.444] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:04.603] Server  LOG      ✓ Compiled in 254ms
-[00:04:08.971] Server  LOG      ✓ Compiled in 264ms
-[00:05:58.148] Server  LOG      ✓ Compiled in 135ms
-[00:06:06.183] Server  LOG      ✓ Compiled in 69ms
-[00:06:12.938] Server  LOG      ✓ Compiled in 74ms
-[00:06:16.447] Server  LOG      ✓ Compiled in 82ms
-[00:06:19.090] Server  LOG      ✓ Compiled in 58ms
-[00:06:22.320] Server  LOG      ✓ Compiled in 99ms
-[00:06:29.053] Server  LOG      ✓ Compiled in 162ms
+[00:00:01.565] Server  LOG      ✓ Ready in 1009ms
+[00:00:06.150] Server  ERROR    ⨯ ./src/app/icon.tsx:1:10
+Ecmascript file had an error
+> 1 | import { ImageResponse } from "next/server";
+    |          ^^^^^^^^^^^^^
+  2 |
+  3 | export const size = {
+  4 |   width: 32,
+
+ImageResponse moved from "next/server" to "next/og" since Next.js 14, please import from "next/og" instead
+
+Import trace:
+  Server Component:
+    ./src/app/icon.tsx
+    ./src/app/icon--metadata.js
+
+
+[00:00:07.951] Browser ERROR   uncaughtError: Error: ./src/app/icon.tsx:1:10
+Ecmascript file had an error
+> 1 | import { ImageResponse } from "next/server";
+    |          ^^^^^^^^^^^^^
+  2 |
+  3 | export const size = {
+  4 |   width: 32,
+
+ImageResponse moved from "next/server" to "next/og" since Next.js 14, please import from "next/og" instead
+
+Import trace:
+  Server Component:
+    ./src/app/icon.tsx
+    ./src/app/icon--metadata.js
+
+
+[00:00:08.202] Browser ERROR   ./src/app/icon.tsx:1:10
+Ecmascript file had an error
+> 1 | import { ImageResponse } from "next/server";
+    |          ^^^^^^^^^^^^^
+  2 |
+  3 | export const size = {
+  4 |   width: 32,
+
+ImageResponse moved from "next/server" to "next/og" since Next.js 14, please import from "next/og" instead
+
+Import trace:
+  Server Component:
+    ./src/app/icon.tsx
+    ./src/app/icon--metadata.js
+[00:00:08.622] Browser ERROR   ./src/app/icon.tsx:1:10
+Ecmascript file had an error
+> 1 | import { ImageResponse } from "next/server";
+    |          ^^^^^^^^^^^^^
+  2 |
+  3 | export const size = {
+  4 |   width: 32,
+
+ImageResponse moved from "next/server" to "next/og" since Next.js 14, please import from "next/og" instead
+
+Import trace:
+  Server Component:
+    ./src/app/icon.tsx
+    ./src/app/icon--metadata.js
+[00:00:32.102] Server  LOG      ✓ Compiled in 113ms
+[00:00:33.021] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:49.433] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:52.532] Server  LOG      ✓ Compiled in 76ms
+[00:08:12.902] Browser ERROR   ./src/app/layout.tsx:9:10
+Parsing ecmascript source code failed
+   7 |
+   8 | export const metadata: Metadata = {
+>  9 |   title: ",
+     |          ^^
+  10 |   description: "Encontre o carro ideal com ajuda de IA",
+  11 | };
+  12 |
+
+Unterminated string constant
+[00:08:14.912] Browser ERROR   ./src/app/layout.tsx:9:12
+Parsing ecmascript source code failed
+   7 |
+   8 | export const metadata: Metadata = {
+>  9 |   title: """,
+     |            ^^
+  10 |   description: "Encontre o carro ideal com ajuda de IA",
+  11 | };
+  12 |
+
+Unterminated string constant
