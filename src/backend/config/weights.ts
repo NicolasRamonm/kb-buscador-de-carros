@@ -17,6 +17,7 @@ export const POPUP_THRESHOLDS = {
 } as const;
 
 export const SPECIAL_OFFER = {
-  maxPriceFlexPercent: parseFloat(process.env.MAX_PRICE_FLEX_PERCENT ?? "0.50"),
+  /** Mostrar oferta especial se o orçamento do cliente for >= este percentual do valor do carro (ex.: 0.10 = 10%). */
+  minBudgetPercentOfCar: parseFloat(process.env.SPECIAL_OFFER_MIN_BUDGET_PERCENT ?? "0.10"),
   tag: "Condições especiais para você",
 } as const;

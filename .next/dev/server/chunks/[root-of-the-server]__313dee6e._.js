@@ -342,7 +342,7 @@ const POPUP_THRESHOLDS = {
     alternativeScoreRatio: 0.5
 };
 const SPECIAL_OFFER = {
-    maxPriceFlexPercent: parseFloat(process.env.MAX_PRICE_FLEX_PERCENT ?? "0.50"),
+    /** Mostrar oferta especial se o orçamento do cliente for >= este percentual do valor do carro (ex.: 0.10 = 10%). */ minBudgetPercentOfCar: parseFloat(process.env.SPECIAL_OFFER_MIN_BUDGET_PERCENT ?? "0.10"),
     tag: "Condições especiais para você"
 };
 }),
@@ -509,8 +509,8 @@ function buildSpecialOffer(scoredCars, intent, filterResult) {
     if (!intent.maxPrice) return null;
     const modelCar = findEnrichedCar(intent.model);
     if (!modelCar) return null;
-    const priceDiff = (modelCar.price - intent.maxPrice) / intent.maxPrice;
-    if (priceDiff > __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$backend$2f$config$2f$weights$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["SPECIAL_OFFER"].maxPriceFlexPercent) return null;
+    const minBudget = modelCar.price * __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$backend$2f$config$2f$weights$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["SPECIAL_OFFER"].minBudgetPercentOfCar;
+    if (intent.maxPrice < minBudget) return null;
     const scored = scoredCars.find((sc)=>sc.car.model.toLowerCase() === intent.model.toLowerCase());
     if (!scored) return null;
     return {
