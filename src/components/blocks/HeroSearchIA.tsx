@@ -52,7 +52,7 @@ export function HeroSearchIA({ onSearch }: HeroSearchIAProps) {
             <Sparkles size={18} className="shrink-0 text-violet-600" />
             <input
               type="text"
-              placeholder="Descreva o que você está procurando"
+              placeholder="Queria comprar um BYD Dolphin por 80mil"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
