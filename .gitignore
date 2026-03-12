@@ -1,3 +1,15 @@
 node_modules
-.env
-frontend-architect.md
+
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+.env*
