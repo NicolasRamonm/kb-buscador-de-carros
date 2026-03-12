@@ -52,7 +52,7 @@ export function PaymentSimulationFeature() {
           Simule como chegar nesse carro
         </h1>
         <Badge variant="info">
-          Passou do orçamento, mas a IA achou alternativas
+          Veja como esse carro cabe no seu bolso
         </Badge>
       </header>
 
@@ -66,14 +66,18 @@ export function PaymentSimulationFeature() {
               {fullTitle}
             </h2>
             <p className="text-[13px] text-gray-600">
-              2019 &bull; 45.000 km &bull; Automático &bull; Flex
+              {car.year ?? "—"} &bull;{" "}
+              {car.mileage != null
+                ? `${car.mileage.toLocaleString("pt-BR")} km`
+                : "— km"}{" "}
+              &bull; {car.transmission ?? "—"} &bull; {car.fuel ?? "—"}
             </p>
             <div className="flex items-center gap-1.5">
               <span className="text-lg font-bold text-blue-600">
                 {formatPrice(car.Price)}
               </span>
               <span className="text-xs text-gray-500">
-                Seu orçamento: R$ 95.000
+                Confira as condições de pagamento
               </span>
             </div>
           </Card>

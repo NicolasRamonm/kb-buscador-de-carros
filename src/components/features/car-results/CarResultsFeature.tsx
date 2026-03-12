@@ -68,16 +68,21 @@ export function CarResultsFeature() {
   const isBrandMode = Boolean(brandFilter);
   const allCars = useMemo(() => getAllCars(), []);
 
-  const displayCars: Array<{ Name: string; Model: string; Price: number; Location: string; index: number; isRecommended: boolean; isSpecialOffer: boolean; year?: number; mileage?: number; transmission?: string; fuel?: string }> =
+  const displayCars: Array<{ Name: string; Model: string; Price: number; Location: string; Image: string; index: number; isRecommended: boolean; isSpecialOffer: boolean; year?: number; mileage?: number; transmission?: string; fuel?: string }> =
     isBrandMode
       ? brandCars.map((car) => ({
           Name: car.Name,
           Model: car.Model,
           Price: car.Price,
           Location: car.Location,
+          Image: car.Image,
           index: allCars.indexOf(car),
           isRecommended: false,
           isSpecialOffer: false,
+          year: car.year,
+          mileage: car.mileage,
+          transmission: car.transmission,
+          fuel: car.fuel,
         }))
       : aiResult
         ? aiResult.cars.map((car) => ({
@@ -85,6 +90,7 @@ export function CarResultsFeature() {
             Model: car.model,
             Price: car.price,
             Location: car.location,
+            Image: car.image,
             index: car.index,
             isRecommended: aiResult.recommendation?.car.id === car.id,
             isSpecialOffer: car.id === specialOfferId,
@@ -98,9 +104,14 @@ export function CarResultsFeature() {
             Model: car.Model,
             Price: car.Price,
             Location: car.Location,
+            Image: car.Image,
             index: i,
             isRecommended: false,
             isSpecialOffer: false,
+            year: car.year,
+            mileage: car.mileage,
+            transmission: car.transmission,
+            fuel: car.fuel,
           }));
 
   const filtered = displayCars.filter(
@@ -282,13 +293,25 @@ export function CarResultsFeature() {
                 }
                 shadow="md"
               >
-                <div
-                  className={
-                    car.isSpecialOffer
-                      ? "h-[140px] w-[220px] shrink-0 rounded-xl bg-amber-100"
-                      : "h-[140px] w-[220px] shrink-0 rounded-xl bg-gray-200"
-                  }
-                />
+                {car.Image && car.Image !== "exemplo.png" ? (
+                  <img
+                    src={car.Image}
+                    alt={`${car.Name} ${car.Model}`}
+                    className={
+                      car.isSpecialOffer
+                        ? "h-[140px] w-[220px] shrink-0 rounded-xl object-cover"
+                        : "h-[140px] w-[220px] shrink-0 rounded-xl object-cover"
+                    }
+                  />
+                ) : (
+                  <div
+                    className={
+                      car.isSpecialOffer
+                        ? "h-[140px] w-[220px] shrink-0 rounded-xl bg-amber-100"
+                        : "h-[140px] w-[220px] shrink-0 rounded-xl bg-gray-200"
+                    }
+                  />
+                )}
                 <div className="flex flex-1 flex-col gap-1.5">
                   <div className="flex items-center gap-1.5">
                     <h3 className="text-[15px] font-semibold text-gray-900">
@@ -302,10 +325,12 @@ export function CarResultsFeature() {
                     )}
                   </div>
                   <p className="text-xs text-gray-600">
-                    {car.year ?? 2019} &bull;{" "}
-                    {car.mileage ? `${car.mileage.toLocaleString("pt-BR")} km` : "45.000 km"}{" "}
-                    &bull; {car.transmission ?? "Automático"} &bull;{" "}
-                    {car.fuel ?? "Flex"}
+                    {car.year ?? "—"} &bull;{" "}
+                    {car.mileage != null
+                      ? `${car.mileage.toLocaleString("pt-BR")} km`
+                      : "— km"}{" "}
+                    &bull; {car.transmission ?? "—"} &bull;{" "}
+                    {car.fuel ?? "—"}
                   </p>
                   <div className="mt-auto flex items-center justify-between">
                     <div className="flex flex-col gap-0.5">

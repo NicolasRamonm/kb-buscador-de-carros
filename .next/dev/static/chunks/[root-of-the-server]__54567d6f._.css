@@ -774,6 +774,11 @@ img, video {
   --tw-gradient-to: #d1d5db var(--tw-gradient-to-position);
 }
 
+.object-cover {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
 .p-3 {
   padding: .75rem;
 }

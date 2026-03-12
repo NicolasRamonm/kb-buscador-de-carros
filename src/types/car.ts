@@ -4,6 +4,17 @@ export interface Car {
   Image: string;
   Price: number;
   Location: string;
+  id?: string;
+  fullName?: string;
+  year?: number;
+  mileage?: number;
+  transmission?: string;
+  fuel?: string;
+  category?: string;
+  tags?: string[];
+  lat?: number;
+  lng?: number;
+  content?: string;
 }
 
 export interface EnrichedCar {

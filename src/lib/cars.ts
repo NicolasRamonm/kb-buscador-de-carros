@@ -1,7 +1,24 @@
 import type { Car, SearchResponse, CarResponse } from "@/types/car";
-import carsData from "../../cars.json";
+import enrichedCars from "../backend/data/cars-enriched.json";
 
-const cars: Car[] = carsData as Car[];
+const cars: Car[] = enrichedCars.map((ec) => ({
+  Name: ec.brand,
+  Model: ec.model,
+  Image: ec.image,
+  Price: ec.price,
+  Location: ec.location,
+  id: ec.id,
+  fullName: ec.fullName,
+  year: ec.year,
+  mileage: ec.mileage,
+  transmission: ec.transmission,
+  fuel: ec.fuel,
+  category: ec.category,
+  tags: ec.tags,
+  lat: ec.lat,
+  lng: ec.lng,
+  content: ec.content,
+}));
 
 export function getAllCars(): Car[] {
   return cars;
@@ -17,7 +34,10 @@ export function findCarsByQuery(query: string): Car[] {
     (car) =>
       car.Name.toLowerCase().includes(lower) ||
       car.Model.toLowerCase().includes(lower) ||
-      car.Location.toLowerCase().includes(lower)
+      car.Location.toLowerCase().includes(lower) ||
+      car.category?.toLowerCase().includes(lower) ||
+      car.tags?.some((tag) => tag.toLowerCase().includes(lower)) ||
+      car.content?.toLowerCase().includes(lower)
   );
 }
 
@@ -58,5 +78,13 @@ export function carResponseToCar(cr: CarResponse): Car {
     Image: cr.image,
     Price: cr.price,
     Location: cr.location,
+    id: cr.id,
+    fullName: cr.fullName,
+    year: cr.year,
+    mileage: cr.mileage,
+    transmission: cr.transmission,
+    fuel: cr.fuel,
+    category: cr.category,
+    tags: cr.tags,
   };
 }

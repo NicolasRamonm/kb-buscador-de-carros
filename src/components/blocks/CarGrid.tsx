@@ -30,7 +30,15 @@ export function CarGrid({ cars, onSeeAll }: CarGridProps) {
         {cars.map((car, index) => (
           <Link key={`${car.Name}-${car.Model}-${index}`} href={`/detalhe?id=${index}`}>
             <Card className="overflow-hidden transition-shadow hover:shadow-md">
-              <div className="h-40 w-full bg-gradient-to-br from-gray-200 to-gray-300" />
+              {car.Image && car.Image !== "exemplo.png" ? (
+                <img
+                  src={car.Image}
+                  alt={`${car.Name} ${car.Model}`}
+                  className="h-40 w-full object-cover"
+                />
+              ) : (
+                <div className="h-40 w-full bg-gradient-to-br from-gray-200 to-gray-300" />
+              )}
               <div className="flex flex-col gap-1.5 px-4 pb-3.5 pt-3.5">
                 <h3 className="text-[15px] font-semibold text-gray-900">
                   {car.Name} {car.Model}

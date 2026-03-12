@@ -42,7 +42,15 @@ export function CarDetailFeature() {
         <div className="flex gap-8">
           {/* Media column */}
           <div className="flex w-[640px] shrink-0 flex-col gap-3">
-            <div className="h-[360px] w-full rounded-2xl bg-gray-200" />
+            {car.Image && car.Image !== "exemplo.png" ? (
+              <img
+                src={car.Image}
+                alt={fullTitle}
+                className="h-[360px] w-full rounded-2xl object-cover"
+              />
+            ) : (
+              <div className="h-[360px] w-full rounded-2xl bg-gray-200" />
+            )}
             <div className="flex gap-2">
               <div className="h-20 flex-1 rounded-xl bg-gray-200" />
               <div className="h-20 flex-1 rounded-xl bg-gray-200" />
@@ -56,7 +64,11 @@ export function CarDetailFeature() {
               {fullTitle}
             </h1>
             <p className="text-sm text-gray-600">
-              2019 &bull; 45.000 km &bull; Automático &bull; Flex
+              {car.year ?? "—"} &bull;{" "}
+              {car.mileage != null
+                ? `${car.mileage.toLocaleString("pt-BR")} km`
+                : "— km"}{" "}
+              &bull; {car.transmission ?? "—"} &bull; {car.fuel ?? "—"}
             </p>
 
             {/* Price box */}
@@ -66,7 +78,7 @@ export function CarDetailFeature() {
                 {formatPrice(car.Price)}
               </span>
               <span className="text-xs text-gray-600">
-                ou R$ 1.999/mês no financiamento
+                Consulte condições de financiamento
               </span>
             </Card>
 
@@ -114,17 +126,22 @@ export function CarDetailFeature() {
             </h2>
             <div className="flex gap-6">
               <div className="flex flex-1 flex-col gap-2">
-                <span className="text-[13px] text-gray-600">Ano: 2019</span>
                 <span className="text-[13px] text-gray-600">
-                  Quilometragem: 45.000 km
+                  Ano: {car.year ?? "—"}
                 </span>
                 <span className="text-[13px] text-gray-600">
-                  Câmbio: Automático
+                  Quilometragem:{" "}
+                  {car.mileage != null
+                    ? `${car.mileage.toLocaleString("pt-BR")} km`
+                    : "—"}
+                </span>
+                <span className="text-[13px] text-gray-600">
+                  Câmbio: {car.transmission ?? "—"}
                 </span>
               </div>
               <div className="flex flex-1 flex-col gap-2">
                 <span className="text-[13px] text-gray-600">
-                  Combustível: Flex
+                  Combustível: {car.fuel ?? "—"}
                 </span>
                 <span className="text-[13px] text-gray-600">Cor: Branco</span>
                 <span className="text-[13px] text-gray-600">Portas: 4</span>
@@ -140,7 +157,7 @@ export function CarDetailFeature() {
             <Card className="rounded-xl border border-gray-200 p-3.5 shadow-none">
               <p className="text-[13px] leading-6 text-gray-600">
                 Com base no seu uso diário na cidade, necessidade de conforto e
-                bom consumo, este {car.Model} 2019 automático foi classificado
+                bom consumo, este {car.Model}{car.year ? ` ${car.year}` : ""}{car.transmission ? ` ${car.transmission.toLowerCase()}` : ""} foi classificado
                 como uma das melhores combinações de custo-benefício do estoque.
               </p>
             </Card>
