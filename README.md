@@ -21,7 +21,7 @@
 
 **Versão online**
 
-Acesse a plataforma clicando [aqui](https://cargen.vercel.app/como-funciona).
+Acesse a plataforma clicando [aqui](https://cargen.vercel.app).
 
 **Rodar localmente**
 
@@ -89,7 +89,6 @@ No final dessa etapa, o sistema já tem uma representação estruturada da inten
 **Pontos Atacados**
 - Prompts subjetivos não vão quebrar o sistema, algo bem subjetivo ainda terá uma resposta satisfatória por conta dos embeddings a partir do .json enriquecido.
 - Escala: Não ser um simples sistema que puxa o .json e lê ele inteiro para responder algo, torna o sistema muito mais escalável.
--
 
 ## 1.3 Estrutura de Pastas
 
