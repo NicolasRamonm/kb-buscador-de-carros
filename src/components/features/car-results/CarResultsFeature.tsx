@@ -293,7 +293,7 @@ export function CarResultsFeature() {
                 }
                 shadow="md"
               >
-                {car.Image && car.Image !== "exemplo.png" ? (
+                {car.Image ? (
                   <img
                     src={car.Image}
                     alt={`${car.Name} ${car.Model}`}

@@ -77,12 +77,18 @@ export async function matchCarsByVector(
 }
 
 function mapRowToEnrichedCar(row: Record<string, unknown>): EnrichedCar {
+  const rawImage = (row.image ?? "") as string;
+  const image =
+    rawImage && rawImage !== "exemplo.png"
+      ? rawImage
+      : `/img/${row.id as string}/1.png`;
+
   return {
     id: row.id as string,
     brand: row.brand as string,
     model: row.model as string,
     fullName: (row.full_name ?? row.fullName) as string,
-    image: row.image as string,
+    image,
     price: row.price as number,
     location: row.location as string,
     lat: row.lat as number,

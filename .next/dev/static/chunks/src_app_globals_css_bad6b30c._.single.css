@@ -340,6 +340,10 @@ img, video {
   height: 48px;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .h-px {
   height: 1px;
 }

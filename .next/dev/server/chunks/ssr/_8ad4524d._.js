@@ -137,7 +137,7 @@ function formatPrice(value) {
 }),
 "[project]/src/backend/data/cars-enriched.json (json)", ((__turbopack_context__) => {
 
-__turbopack_context__.v([{"id":"byd-dolphin","brand":"BYD","model":"Dolphin","fullName":"BYD Dolphin","image":"exemplo.png","price":99990,"location":"São Paulo","lat":-23.5505,"lng":-46.6333,"year":2024,"mileage":0,"transmission":"Automático","fuel":"Elétrico","category":"hatch","tags":["elétrico","econômico","tecnológico","sustentável","cidade","moderno","silencioso","baixa manutenção","compacto"],"content":"BYD Dolphin 2024 hatch elétrico automático. Carro 100% elétrico, ideal para quem busca economia e sustentabilidade. Zero emissões, manutenção reduzida e tecnologia de ponta. Excelente para uso urbano na cidade com autonomia suficiente para o dia a dia. Design moderno e interior espaçoso para um hatch. Disponível em São Paulo."},{"id":"toyota-corolla","brand":"Toyota","model":"Corolla","fullName":"Toyota Corolla","image":"exemplo.png","price":112000,"location":"São Paulo","lat":-23.5505,"lng":-46.6333,"year":2019,"mileage":45000,"transmission":"Automático","fuel":"Flex","category":"sedan","tags":["confortável","espaçoso","familiar","econômico","cidade","viagem","revenda alta","confiável","seguro"],"content":"Toyota Corolla 2019 sedan automático flex. Carro confortável e espaçoso, ideal para família. Excelente custo-benefício e alta revenda. Bom para uso na cidade e viagens longas. Consumo eficiente, manutenção acessível e alta confiabilidade. Um dos sedans mais vendidos e confiáveis do Brasil. Disponível em São Paulo."},{"id":"vw-tcross","brand":"Volkswagen","model":"T-Cross","fullName":"Volkswagen T-Cross","image":"exemplo.png","price":118500,"location":"Campinas","lat":-22.9099,"lng":-47.0626,"year":2022,"mileage":28000,"transmission":"Automático","fuel":"Flex","category":"suv","tags":["SUV","espaçoso","familiar","aventura","cidade","alto","versátil","seguro","moderno"],"content":"Volkswagen T-Cross 2022 SUV compacto automático flex. SUV versátil ideal para famílias que buscam espaço e posição de dirigir elevada. Bom desempenho tanto na cidade quanto em estradas. Interior amplo com porta-malas generoso. Design moderno e boa lista de equipamentos de segurança. Disponível em Campinas."},{"id":"honda-civic","brand":"Honda","model":"Civic","fullName":"Honda Civic","image":"exemplo.png","price":105000,"location":"Rio de Janeiro","lat":-22.9068,"lng":-43.1729,"year":2020,"mileage":38000,"transmission":"Automático","fuel":"Flex","category":"sedan","tags":["esportivo","confortável","potente","tecnológico","cidade","viagem","premium","design","seguro"],"content":"Honda Civic 2020 sedan automático flex. Sedan com pegada esportiva e acabamento premium. Motor potente com excelente dirigibilidade. Ideal para quem busca conforto com desempenho acima da média. Tecnologia embarcada de ponta, interior sofisticado. Ótimo para viagens longas e uso diário na cidade. Disponível no Rio de Janeiro."},{"id":"chevrolet-onix","brand":"Chevrolet","model":"Onix","fullName":"Chevrolet Onix","image":"exemplo.png","price":85000,"location":"Belo Horizonte","lat":-19.9167,"lng":-43.9345,"year":2021,"mileage":32000,"transmission":"Automático","fuel":"Flex","category":"hatch","tags":["econômico","compacto","cidade","popular","acessível","baixo consumo","primeiro carro","prático","ágil"],"content":"Chevrolet Onix 2021 hatch compacto automático flex. O carro mais vendido do Brasil, conhecido pelo excelente custo-benefício. Consumo muito baixo de combustível, ideal para uso diário na cidade. Perfeito como primeiro carro ou para quem busca economia. Manutenção barata e ampla rede de concessionárias. Disponível em Belo Horizonte."},{"id":"hyundai-hb20","brand":"Hyundai","model":"HB20","fullName":"Hyundai HB20","image":"exemplo.png","price":79000,"location":"São Paulo","lat":-23.5505,"lng":-46.6333,"year":2021,"mileage":35000,"transmission":"Automático","fuel":"Flex","category":"hatch","tags":["econômico","compacto","cidade","acessível","design bonito","moderno","primeiro carro","jovem","prático"],"content":"Hyundai HB20 2021 hatch compacto automático flex. Compacto com design moderno e bonito, muito popular entre jovens e como primeiro carro. Excelente economia de combustível e manutenção acessível. Interior bem acabado para a categoria. Ótimo para rodar na cidade com agilidade. Disponível em São Paulo."},{"id":"renault-kwid","brand":"Renault","model":"Kwid","fullName":"Renault Kwid","image":"exemplo.png","price":68990,"location":"Curitiba","lat":-25.4284,"lng":-49.2733,"year":2022,"mileage":22000,"transmission":"Manual","fuel":"Flex","category":"compacto","tags":["barato","econômico","entrada","compacto","cidade","primeiro carro","acessível","leve","simples"],"content":"Renault Kwid 2022 compacto manual flex. O carro mais acessível da lista, perfeito para quem busca o melhor preço de entrada. Muito econômico no combustível, leve e fácil de manobrar. Ideal para uso exclusivamente urbano. Visual aventureiro inspirado em SUV. Ótima opção para primeiro carro ou orçamento limitado. Disponível em Curitiba."},{"id":"fiat-pulse","brand":"Fiat","model":"Pulse","fullName":"Fiat Pulse","image":"exemplo.png","price":96000,"location":"São Paulo","lat":-23.5505,"lng":-46.6333,"year":2023,"mileage":15000,"transmission":"Automático","fuel":"Flex","category":"suv","tags":["SUV","compacto","moderno","turbo","potente","cidade","jovem","tecnológico","design"],"content":"Fiat Pulse 2023 SUV compacto automático flex turbo. SUV compacto com motor turbo que entrega potência e agilidade. Design moderno e atraente, com interior tecnológico e multimídia de última geração. Ideal para jovens que querem um SUV com pegada esportiva. Boa altura do solo e versatilidade urbana. Disponível em São Paulo."},{"id":"jeep-renegade","brand":"Jeep","model":"Renegade","fullName":"Jeep Renegade","image":"exemplo.png","price":122000,"location":"Porto Alegre","lat":-30.0346,"lng":-51.2177,"year":2021,"mileage":40000,"transmission":"Automático","fuel":"Flex","category":"suv","tags":["SUV","aventura","off-road","robusto","espaçoso","familiar","viagem","campo","seguro","alto"],"content":"Jeep Renegade 2021 SUV automático flex. SUV robusto e aventureiro, ideal para quem gosta de pegar estrada e aventura. Capacidade off-road real com boa altura do solo. Espaçoso para família e bagagens em viagens. Marca Jeep traz confiança em terrenos difíceis. Ótimo para quem mora em regiões com estradas ruins ou busca versatilidade total. Disponível em Porto Alegre."},{"id":"peugeot-208","brand":"Peugeot","model":"208","fullName":"Peugeot 208","image":"exemplo.png","price":87500,"location":"São Paulo","lat":-23.5505,"lng":-46.6333,"year":2022,"mileage":25000,"transmission":"Automático","fuel":"Flex","category":"hatch","tags":["design","europeu","moderno","tecnológico","cidade","premium","compacto","estiloso","confortável"],"content":"Peugeot 208 2022 hatch automático flex. Hatch com design europeu sofisticado e interior inovador com painel digital i-Cockpit. Destaque em tecnologia e acabamento premium para a categoria. Motor eficiente e ótima dirigibilidade urbana. Ideal para quem valoriza estilo e refinamento em um carro compacto. Disponível em São Paulo."}]);}),
+__turbopack_context__.v([{"id":"byd-dolphin","brand":"BYD","model":"Dolphin","fullName":"BYD Dolphin","image":"/img/byd-dolphin/1.png","price":99990,"location":"São Paulo","lat":-23.5505,"lng":-46.6333,"year":2024,"mileage":0,"transmission":"Automático","fuel":"Elétrico","category":"hatch","tags":["elétrico","econômico","tecnológico","sustentável","cidade","moderno","silencioso","baixa manutenção","compacto"],"content":"BYD Dolphin 2024 hatch elétrico automático. Carro 100% elétrico, ideal para quem busca economia e sustentabilidade. Zero emissões, manutenção reduzida e tecnologia de ponta. Excelente para uso urbano na cidade com autonomia suficiente para o dia a dia. Design moderno e interior espaçoso para um hatch. Disponível em São Paulo."},{"id":"toyota-corolla","brand":"Toyota","model":"Corolla","fullName":"Toyota Corolla","image":"/img/toyota-corolla/1.png","price":112000,"location":"São Paulo","lat":-23.5505,"lng":-46.6333,"year":2019,"mileage":45000,"transmission":"Automático","fuel":"Flex","category":"sedan","tags":["confortável","espaçoso","familiar","econômico","cidade","viagem","revenda alta","confiável","seguro"],"content":"Toyota Corolla 2019 sedan automático flex. Carro confortável e espaçoso, ideal para família. Excelente custo-benefício e alta revenda. Bom para uso na cidade e viagens longas. Consumo eficiente, manutenção acessível e alta confiabilidade. Um dos sedans mais vendidos e confiáveis do Brasil. Disponível em São Paulo."},{"id":"vw-tcross","brand":"Volkswagen","model":"T-Cross","fullName":"Volkswagen T-Cross","image":"/img/vw-tcross/1.png","price":118500,"location":"Campinas","lat":-22.9099,"lng":-47.0626,"year":2022,"mileage":28000,"transmission":"Automático","fuel":"Flex","category":"suv","tags":["SUV","espaçoso","familiar","aventura","cidade","alto","versátil","seguro","moderno"],"content":"Volkswagen T-Cross 2022 SUV compacto automático flex. SUV versátil ideal para famílias que buscam espaço e posição de dirigir elevada. Bom desempenho tanto na cidade quanto em estradas. Interior amplo com porta-malas generoso. Design moderno e boa lista de equipamentos de segurança. Disponível em Campinas."},{"id":"honda-civic","brand":"Honda","model":"Civic","fullName":"Honda Civic","image":"/img/honda-civic/1.png","price":105000,"location":"Rio de Janeiro","lat":-22.9068,"lng":-43.1729,"year":2020,"mileage":38000,"transmission":"Automático","fuel":"Flex","category":"sedan","tags":["esportivo","confortável","potente","tecnológico","cidade","viagem","premium","design","seguro"],"content":"Honda Civic 2020 sedan automático flex. Sedan com pegada esportiva e acabamento premium. Motor potente com excelente dirigibilidade. Ideal para quem busca conforto com desempenho acima da média. Tecnologia embarcada de ponta, interior sofisticado. Ótimo para viagens longas e uso diário na cidade. Disponível no Rio de Janeiro."},{"id":"chevrolet-onix","brand":"Chevrolet","model":"Onix","fullName":"Chevrolet Onix","image":"/img/chevrolet-onix/1.png","price":85000,"location":"Belo Horizonte","lat":-19.9167,"lng":-43.9345,"year":2021,"mileage":32000,"transmission":"Automático","fuel":"Flex","category":"hatch","tags":["econômico","compacto","cidade","popular","acessível","baixo consumo","primeiro carro","prático","ágil"],"content":"Chevrolet Onix 2021 hatch compacto automático flex. O carro mais vendido do Brasil, conhecido pelo excelente custo-benefício. Consumo muito baixo de combustível, ideal para uso diário na cidade. Perfeito como primeiro carro ou para quem busca economia. Manutenção barata e ampla rede de concessionárias. Disponível em Belo Horizonte."},{"id":"hyundai-hb20","brand":"Hyundai","model":"HB20","fullName":"Hyundai HB20","image":"/img/hyundai-hb20/1.png","price":79000,"location":"São Paulo","lat":-23.5505,"lng":-46.6333,"year":2021,"mileage":35000,"transmission":"Automático","fuel":"Flex","category":"hatch","tags":["econômico","compacto","cidade","acessível","design bonito","moderno","primeiro carro","jovem","prático"],"content":"Hyundai HB20 2021 hatch compacto automático flex. Compacto com design moderno e bonito, muito popular entre jovens e como primeiro carro. Excelente economia de combustível e manutenção acessível. Interior bem acabado para a categoria. Ótimo para rodar na cidade com agilidade. Disponível em São Paulo."},{"id":"renault-kwid","brand":"Renault","model":"Kwid","fullName":"Renault Kwid","image":"/img/renault-kwid/1.png","price":68990,"location":"Curitiba","lat":-25.4284,"lng":-49.2733,"year":2022,"mileage":22000,"transmission":"Manual","fuel":"Flex","category":"compacto","tags":["barato","econômico","entrada","compacto","cidade","primeiro carro","acessível","leve","simples"],"content":"Renault Kwid 2022 compacto manual flex. O carro mais acessível da lista, perfeito para quem busca o melhor preço de entrada. Muito econômico no combustível, leve e fácil de manobrar. Ideal para uso exclusivamente urbano. Visual aventureiro inspirado em SUV. Ótima opção para primeiro carro ou orçamento limitado. Disponível em Curitiba."},{"id":"fiat-pulse","brand":"Fiat","model":"Pulse","fullName":"Fiat Pulse","image":"/img/fiat-pulse/1.png","price":96000,"location":"São Paulo","lat":-23.5505,"lng":-46.6333,"year":2023,"mileage":15000,"transmission":"Automático","fuel":"Flex","category":"suv","tags":["SUV","compacto","moderno","turbo","potente","cidade","jovem","tecnológico","design"],"content":"Fiat Pulse 2023 SUV compacto automático flex turbo. SUV compacto com motor turbo que entrega potência e agilidade. Design moderno e atraente, com interior tecnológico e multimídia de última geração. Ideal para jovens que querem um SUV com pegada esportiva. Boa altura do solo e versatilidade urbana. Disponível em São Paulo."},{"id":"jeep-renegade","brand":"Jeep","model":"Renegade","fullName":"Jeep Renegade","image":"/img/jeep-renegade/1.png","price":122000,"location":"Porto Alegre","lat":-30.0346,"lng":-51.2177,"year":2021,"mileage":40000,"transmission":"Automático","fuel":"Flex","category":"suv","tags":["SUV","aventura","off-road","robusto","espaçoso","familiar","viagem","campo","seguro","alto"],"content":"Jeep Renegade 2021 SUV automático flex. SUV robusto e aventureiro, ideal para quem gosta de pegar estrada e aventura. Capacidade off-road real com boa altura do solo. Espaçoso para família e bagagens em viagens. Marca Jeep traz confiança em terrenos difíceis. Ótimo para quem mora em regiões com estradas ruins ou busca versatilidade total. Disponível em Porto Alegre."},{"id":"peugeot-208","brand":"Peugeot","model":"208","fullName":"Peugeot 208","image":"/img/peugeot-208/1.png","price":87500,"location":"São Paulo","lat":-23.5505,"lng":-46.6333,"year":2022,"mileage":25000,"transmission":"Automático","fuel":"Flex","category":"hatch","tags":["design","europeu","moderno","tecnológico","cidade","premium","compacto","estiloso","confortável"],"content":"Peugeot 208 2022 hatch automático flex. Hatch com design europeu sofisticado e interior inovador com painel digital i-Cockpit. Destaque em tecnologia e acabamento premium para a categoria. Motor eficiente e ótima dirigibilidade urbana. Ideal para quem valoriza estilo e refinamento em um carro compacto. Disponível em São Paulo."}]);}),
 "[project]/src/lib/cars.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -476,6 +476,14 @@ function CarDetailFeature() {
     const [showModal, setShowModal] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     if (!car) return null;
     const fullTitle = `${car.Name} ${car.Model}`;
+    const carId = car.id;
+    const imageUrls = carId != null ? [
+        1,
+        2,
+        3
+    ].map((idx)=>`/img/${carId}/${idx}.png`) : [
+        car.Image
+    ].filter(Boolean);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -489,7 +497,7 @@ function CarDetailFeature() {
                                 label: "Voltar para resultados"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                lineNumber: 32,
+                                lineNumber: 39,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -500,7 +508,7 @@ function CarDetailFeature() {
                                         children: "Recomendado pela IA"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                        lineNumber: 34,
+                                        lineNumber: 41,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -509,24 +517,24 @@ function CarDetailFeature() {
                                             size: 20
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                            lineNumber: 36,
+                                            lineNumber: 43,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                        lineNumber: 35,
+                                        lineNumber: 42,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                lineNumber: 33,
+                                lineNumber: 40,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                        lineNumber: 31,
+                        lineNumber: 38,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -535,55 +543,51 @@ function CarDetailFeature() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex w-[640px] shrink-0 flex-col gap-3",
                                 children: [
-                                    car.Image && car.Image !== "exemplo.png" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                    car.Image ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                         src: car.Image,
                                         alt: fullTitle,
                                         className: "h-[360px] w-full rounded-2xl object-cover"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                        lineNumber: 46,
+                                        lineNumber: 53,
                                         columnNumber: 15
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "h-[360px] w-full rounded-2xl bg-gray-200"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                        lineNumber: 52,
+                                        lineNumber: 59,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex gap-2",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "h-20 flex-1 rounded-xl bg-gray-200"
-                                            }, void 0, false, {
+                                        children: imageUrls.map((url, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "h-20 flex-1",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                    src: url,
+                                                    alt: `${fullTitle} imagem ${idx + 1}`,
+                                                    className: "h-full w-full rounded-xl object-cover",
+                                                    onError: (e)=>{
+                                                        e.currentTarget.style.display = "none";
+                                                    }
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
+                                                    lineNumber: 64,
+                                                    columnNumber: 19
+                                                }, this)
+                                            }, url, false, {
                                                 fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                lineNumber: 55,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "h-20 flex-1 rounded-xl bg-gray-200"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                lineNumber: 56,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "h-20 flex-1 rounded-xl bg-gray-200"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                lineNumber: 57,
-                                                columnNumber: 15
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
+                                                lineNumber: 63,
+                                                columnNumber: 17
+                                            }, this))
+                                    }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                        lineNumber: 54,
+                                        lineNumber: 61,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                lineNumber: 44,
+                                lineNumber: 51,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -594,7 +598,7 @@ function CarDetailFeature() {
                                         children: fullTitle
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                        lineNumber: 63,
+                                        lineNumber: 80,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -612,7 +616,7 @@ function CarDetailFeature() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                        lineNumber: 66,
+                                        lineNumber: 83,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -623,7 +627,7 @@ function CarDetailFeature() {
                                                 children: "Preço à vista"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                lineNumber: 76,
+                                                lineNumber: 93,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -631,7 +635,7 @@ function CarDetailFeature() {
                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$format$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["formatPrice"])(car.Price)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                lineNumber: 77,
+                                                lineNumber: 94,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -639,13 +643,13 @@ function CarDetailFeature() {
                                                 children: "Consulte condições de financiamento"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                lineNumber: 80,
+                                                lineNumber: 97,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                        lineNumber: 75,
+                                        lineNumber: 92,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -656,7 +660,7 @@ function CarDetailFeature() {
                                                 children: "Comprar"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                lineNumber: 87,
+                                                lineNumber: 104,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -669,7 +673,7 @@ function CarDetailFeature() {
                                                         children: "Simular financiamento"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                        lineNumber: 90,
+                                                        lineNumber: 107,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -679,19 +683,19 @@ function CarDetailFeature() {
                                                         children: "Simular consórcio"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                        lineNumber: 97,
+                                                        lineNumber: 114,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                lineNumber: 89,
+                                                lineNumber: 106,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                        lineNumber: 86,
+                                        lineNumber: 103,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -702,7 +706,7 @@ function CarDetailFeature() {
                                                 className: "text-gray-400"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                lineNumber: 109,
+                                                lineNumber: 126,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -713,32 +717,32 @@ function CarDetailFeature() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                lineNumber: 110,
+                                                lineNumber: 127,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                        lineNumber: 108,
+                                        lineNumber: 125,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                lineNumber: 62,
+                                lineNumber: 79,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                        lineNumber: 42,
+                        lineNumber: 49,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "h-px w-full bg-gray-200"
                     }, void 0, false, {
                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                        lineNumber: 118,
+                        lineNumber: 135,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -752,7 +756,7 @@ function CarDetailFeature() {
                                         children: "Detalhes do veículo"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 141,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -769,7 +773,7 @@ function CarDetailFeature() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                        lineNumber: 129,
+                                                        lineNumber: 146,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -781,7 +785,7 @@ function CarDetailFeature() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                        lineNumber: 132,
+                                                        lineNumber: 149,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -792,13 +796,13 @@ function CarDetailFeature() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                        lineNumber: 138,
+                                                        lineNumber: 155,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                lineNumber: 128,
+                                                lineNumber: 145,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -812,7 +816,7 @@ function CarDetailFeature() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                        lineNumber: 143,
+                                                        lineNumber: 160,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -820,7 +824,7 @@ function CarDetailFeature() {
                                                         children: "Cor: Branco"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                        lineNumber: 146,
+                                                        lineNumber: 163,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -828,25 +832,25 @@ function CarDetailFeature() {
                                                         children: "Portas: 4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                        lineNumber: 147,
+                                                        lineNumber: 164,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                                lineNumber: 142,
+                                                lineNumber: 159,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                        lineNumber: 127,
+                                        lineNumber: 144,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                lineNumber: 123,
+                                lineNumber: 140,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -857,7 +861,7 @@ function CarDetailFeature() {
                                         children: "O que a IA considerou"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                        lineNumber: 154,
+                                        lineNumber: 171,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -873,30 +877,30 @@ function CarDetailFeature() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                            lineNumber: 158,
+                                            lineNumber: 175,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                        lineNumber: 157,
+                                        lineNumber: 174,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                                lineNumber: 153,
+                                lineNumber: 170,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                        lineNumber: 121,
+                        lineNumber: 138,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                lineNumber: 29,
+                lineNumber: 36,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$features$2f$car$2d$detail$2f$FinanceModal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FinanceModal"], {
@@ -905,7 +909,7 @@ function CarDetailFeature() {
                 carId: carIndex
             }, void 0, false, {
                 fileName: "[project]/src/components/features/car-detail/CarDetailFeature.tsx",
-                lineNumber: 168,
+                lineNumber: 185,
                 columnNumber: 7
             }, this)
         ]
