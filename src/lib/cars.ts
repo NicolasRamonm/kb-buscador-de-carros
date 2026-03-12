@@ -1,5 +1,6 @@
 import type { Car, SearchResponse, CarResponse } from "@/types/car";
 import enrichedCars from "../backend/data/cars-enriched.json";
+import catalogData from "../../cars.json";
 
 const cars: Car[] = enrichedCars.map((ec) => ({
   Name: ec.brand,
@@ -22,6 +23,17 @@ const cars: Car[] = enrichedCars.map((ec) => ({
 
 export function getAllCars(): Car[] {
   return cars;
+}
+
+export function getCatalogCars(): Car[] {
+  return catalogData.map((c) => ({
+    Name: c.Name,
+    Model: c.Model,
+    Image: c.Image,
+    Price: c.Price,
+    Location: c.Location,
+    id: c.id,
+  }));
 }
 
 export function getCarByIndex(index: number): Car | undefined {

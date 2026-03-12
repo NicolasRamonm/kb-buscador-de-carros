@@ -4,11 +4,11 @@ import { useRouter } from "next/navigation";
 import { HeroSearchIA } from "@/components/blocks/HeroSearchIA";
 import { BrandsRow } from "@/components/blocks/BrandsRow";
 import { CarGrid } from "@/components/blocks/CarGrid";
-import { getAllCars } from "@/lib/cars";
+import { getCatalogCars } from "@/lib/cars";
 
 export function CarSearchFeature() {
   const router = useRouter();
-  const cars = getAllCars();
+  const cars = getCatalogCars();
 
   const handleSearch = (query: string, userState?: string) => {
     const params = new URLSearchParams({ q: query });

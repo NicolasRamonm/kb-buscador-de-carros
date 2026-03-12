@@ -1,1 +1,12 @@
-{}
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/cars/[id]/route": "app/api/cars/[id]/route.js",
+  "/api/cars/route": "app/api/cars/route.js",
+  "/api/search/route": "app/api/search/route.js",
+  "/api/seed/route": "app/api/seed/route.js",
+  "/detalhe/page": "app/detalhe/page.js",
+  "/page": "app/page.js",
+  "/resultados/page": "app/resultados/page.js",
+  "/simulacao/page": "app/simulacao/page.js"
+}
