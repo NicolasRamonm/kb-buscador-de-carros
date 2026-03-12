@@ -374,6 +374,10 @@ img, video {
   margin-top: auto;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .flex {
   display: flex;
 }
@@ -394,8 +398,16 @@ img, video {
   height: 5rem;
 }
 
+.h-3\.5 {
+  height: .875rem;
+}
+
 .h-40 {
   height: 10rem;
+}
+
+.h-5 {
+  height: 1.25rem;
 }
 
 .h-7 {
@@ -426,8 +438,16 @@ img, video {
   height: 1px;
 }
 
+.w-3\.5 {
+  width: .875rem;
+}
+
 .w-7 {
   width: 1.75rem;
+}
+
+.w-9 {
+  width: 2.25rem;
 }
 
 .w-\[120px\] {
@@ -472,6 +492,20 @@ img, video {
 
 .shrink-0 {
   flex-shrink: 0;
+}
+
+.translate-x-1 {
+  --tw-translate-x: .25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-x-4 {
+  --tw-translate-x: 1rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @keyframes pulse {
@@ -717,6 +751,11 @@ img, video {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
 }
 
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
+}
+
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
@@ -744,6 +783,11 @@ img, video {
 .bg-violet-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(245 243 255 / var(--tw-bg-opacity, 1));
+}
+
+.bg-violet-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(124 58 237 / var(--tw-bg-opacity, 1));
 }
 
 .bg-white {
@@ -1161,6 +1205,12 @@ img, video {
 
 .transition-shadow {
   transition-property: box-shadow;
+  transition-duration: .15s;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+}
+
+.transition-transform {
+  transition-property: transform;
   transition-duration: .15s;
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 }

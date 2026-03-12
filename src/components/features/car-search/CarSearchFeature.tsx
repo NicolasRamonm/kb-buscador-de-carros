@@ -10,9 +10,10 @@ export function CarSearchFeature() {
   const router = useRouter();
   const cars = getCatalogCars();
 
-  const handleSearch = (query: string, userState?: string) => {
+  const handleSearch = (query: string, userState?: string, useAI: boolean = true) => {
     const params = new URLSearchParams({ q: query });
     if (userState) params.set("state", userState);
+    if (!useAI) params.set("mode", "simple");
     router.push(`/resultados?${params.toString()}`);
   };
 

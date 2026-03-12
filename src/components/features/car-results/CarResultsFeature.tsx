@@ -19,6 +19,8 @@ export function CarResultsFeature() {
   const query = params.get("q") ?? "";
   const brandFilter = params.get("brand") ?? "";
   const userState = params.get("state") ?? "";
+  const mode = params.get("mode") ?? "ai";
+  const simpleMode = mode === "simple";
 
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 200000]);
   const [carType, setCarType] = useState("");
@@ -29,7 +31,7 @@ export function CarResultsFeature() {
   const [showFinancingPopup, setShowFinancingPopup] = useState(false);
 
   useEffect(() => {
-    if (!query || brandFilter) return;
+    if (!query || brandFilter || simpleMode) return;
     let cancelled = false;
     setLoading(true);
 
@@ -50,7 +52,7 @@ export function CarResultsFeature() {
       });
 
     return () => { cancelled = true; };
-  }, [query, brandFilter, userState]);
+  }, [query, brandFilter, userState, simpleMode]);
 
   const brandCars = useMemo(() => {
     if (!brandFilter) return [];
@@ -129,7 +131,10 @@ export function CarResultsFeature() {
     <div className="flex flex-col gap-6 px-[72px] pb-10 pt-6">
       {/* Header */}
       <header className="flex items-center justify-between">
-        <BackNav href="/" label="Voltar para busca com IA" />
+        <BackNav
+          href="/"
+          label={simpleMode ? "Voltar para busca" : "Voltar para busca com IA"}
+        />
         <div className="flex-1" />
         <span className="text-xs text-gray-600">
           {loading ? "Buscando..." : `${filtered.length} carros encontrados`}
