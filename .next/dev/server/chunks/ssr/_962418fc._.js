@@ -212,7 +212,7 @@ function findCarsByQuery(query) {
     const lower = query.toLowerCase();
     return cars.filter((car)=>car.Name.toLowerCase().includes(lower) || car.Model.toLowerCase().includes(lower) || car.Location.toLowerCase().includes(lower));
 }
-async function searchCarsWithAI(query, userLat, userLng) {
+async function searchCarsWithAI(query, userLat, userLng, userState) {
     const res = await fetch("/api/search", {
         method: "POST",
         headers: {
@@ -221,7 +221,8 @@ async function searchCarsWithAI(query, userLat, userLng) {
         body: JSON.stringify({
             query,
             userLat,
-            userLng
+            userLng,
+            userState
         })
     });
     if (!res.ok) throw new Error("Search failed");
@@ -255,8 +256,6 @@ function carResponseToCar(cr) {
 __turbopack_context__.s([
     "BRANDS",
     ()=>BRANDS,
-    "CAR_TYPES",
-    ()=>CAR_TYPES,
     "SIMULATION_DEFAULTS",
     ()=>SIMULATION_DEFAULTS
 ]);
@@ -265,15 +264,8 @@ const BRANDS = [
     "Honda",
     "Hyundai",
     "Chevrolet",
-    "VW",
+    "Volkswagen",
     "BYD"
-];
-const CAR_TYPES = [
-    "Todos",
-    "SUVs",
-    "Sedans",
-    "Compactos",
-    "Elétricos"
 ];
 const SIMULATION_DEFAULTS = {
     entryAmount: 10000,

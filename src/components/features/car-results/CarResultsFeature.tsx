@@ -119,16 +119,7 @@ export function CarResultsFeature() {
       {/* Header */}
       <header className="flex items-center justify-between">
         <BackNav href="/" label="Voltar para busca com IA" />
-        <div className="flex flex-1 flex-col gap-1 pl-6" style={{ maxWidth: 640 }}>
-          <span className="text-[11px] text-gray-500">
-            {isBrandMode ? "Carros da marca" : "Resultados para"}
-          </span>
-          <span className="text-[15px] font-semibold text-gray-900">
-            {isBrandMode
-              ? brandFilter
-              : `\u201C${query || "Carro confortável para família na cidade, até R$ 100.000"}\u201D`}
-          </span>
-        </div>
+        <div className="flex-1" />
         <span className="text-xs text-gray-600">
           {loading ? "Buscando..." : `${filtered.length} carros encontrados`}
         </span>
