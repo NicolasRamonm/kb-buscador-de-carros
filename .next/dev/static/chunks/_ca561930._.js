@@ -721,28 +721,62 @@ function PaymentSimulationFeature() {
                                 lineNumber: 166,
                                 columnNumber: 11
                             }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
+                                className: "flex flex-col gap-2 rounded-2xl border border-purple-200 bg-purple-100 p-4",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-xs font-semibold text-purple-900",
+                                        children: "Integração com instituições financeiras"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/features/payment-simulation/PaymentSimulationFeature.tsx",
+                                        lineNumber: 189,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-[12px] leading-relaxed text-gray-800",
+                                        children: "Chamar API de instituições financeiras que façam sentido para integração em uma implementação futura."
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/features/payment-simulation/PaymentSimulationFeature.tsx",
+                                        lineNumber: 192,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-[11px] text-gray-600",
+                                        children: "Em uma versão real do sistema, esta área será conectada a APIs oficiais de bancos e financeiras para trazer ofertas, prazos e condições reais de financiamento e consórcio."
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/features/payment-simulation/PaymentSimulationFeature.tsx",
+                                        lineNumber: 196,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/features/payment-simulation/PaymentSimulationFeature.tsx",
+                                lineNumber: 188,
+                                columnNumber: 11
+                            }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex justify-end",
+                                className: "flex",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-                                    className: "gap-2",
+                                    className: "gap-2 w-full",
+                                    fullWidth: true,
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__["Send"], {
                                             size: 16
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/payment-simulation/PaymentSimulationFeature.tsx",
-                                            lineNumber: 190,
+                                            lineNumber: 205,
                                             columnNumber: 15
                                         }, this),
                                         "Avançar para falar com a loja"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/features/payment-simulation/PaymentSimulationFeature.tsx",
-                                    lineNumber: 189,
+                                    lineNumber: 204,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/features/payment-simulation/PaymentSimulationFeature.tsx",
-                                lineNumber: 188,
+                                lineNumber: 203,
                                 columnNumber: 11
                             }, this)
                         ]

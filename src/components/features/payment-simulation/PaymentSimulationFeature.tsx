@@ -185,8 +185,23 @@ export function PaymentSimulationFeature() {
             </span>
           </Card>
 
-          <div className="flex justify-end">
-            <Button className="gap-2">
+          <Card className="flex flex-col gap-2 rounded-2xl border border-purple-200 bg-purple-100 p-4">
+            <span className="text-xs font-semibold text-purple-900">
+              Integração com instituições financeiras
+            </span>
+            <p className="text-[12px] leading-relaxed text-gray-800">
+              Chamar API de instituições financeiras que façam sentido para
+              integração em uma implementação futura.
+            </p>
+            <p className="text-[11px] text-gray-600">
+              Em uma versão real do sistema, esta área será conectada a APIs
+              oficiais de bancos e financeiras para trazer ofertas, prazos e
+              condições reais de financiamento e consórcio.
+            </p>
+          </Card>
+
+          <div className="flex">
+            <Button className="gap-2 w-full" fullWidth>
               <Send size={16} />
               Avançar para falar com a loja
             </Button>
