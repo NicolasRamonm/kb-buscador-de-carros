@@ -91,17 +91,23 @@ async function interpretPrompt(query) {
             }
         ]
     });
-    const content = response.choices[0]?.message?.content;
+    const content = response.choices[0]?.message?.content?.trim();
     if (!content) {
         return {
             rawQuery: query
         };
     }
-    const parsed = JSON.parse(content);
-    return {
-        ...parsed,
-        rawQuery: query
-    };
+    try {
+        const parsed = JSON.parse(content);
+        return {
+            ...parsed,
+            rawQuery: query
+        };
+    } catch  {
+        return {
+            rawQuery: query
+        };
+    }
 }
 }),
 "[project]/src/backend/modules/embedding.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
@@ -509,8 +515,6 @@ function buildSpecialOffer(scoredCars, intent, filterResult) {
     if (!intent.maxPrice) return null;
     const modelCar = findEnrichedCar(intent.model);
     if (!modelCar) return null;
-    const priceDiff = (modelCar.price - intent.maxPrice) / intent.maxPrice;
-    if (priceDiff > __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$backend$2f$config$2f$weights$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["SPECIAL_OFFER"].maxPriceFlexPercent) return null;
     const scored = scoredCars.find((sc)=>sc.car.model.toLowerCase() === intent.model.toLowerCase());
     if (!scored) return null;
     return {
@@ -581,8 +585,10 @@ const openai = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$
     apiKey: process.env.OPENAI_API_KEY
 });
 async function buildSearchResponse(recommendation, allScoredCars, intent) {
-    const explanation = recommendation.recommended ? await generateExplanation(recommendation, intent) : "Não encontrei carros que correspondam exatamente à sua busca.";
-    const alternativeReasons = await generateAlternativeReasons(recommendation.alternatives, intent);
+    const [explanation, alternativeReasons] = await Promise.all([
+        recommendation.recommended ? generateExplanation(recommendation, intent) : Promise.resolve("Não encontrei carros que correspondam exatamente à sua busca."),
+        generateAlternativeReasons(recommendation.alternatives, intent)
+    ]);
     return {
         recommendation: recommendation.recommended ? {
             car: recommendation.recommended.car,

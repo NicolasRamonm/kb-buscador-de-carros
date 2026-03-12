@@ -34,11 +34,15 @@ export async function interpretPrompt(query: string): Promise<ParsedIntent> {
     ],
   });
 
-  const content = response.choices[0]?.message?.content;
+  const content = response.choices[0]?.message?.content?.trim();
   if (!content) {
     return { rawQuery: query };
   }
 
-  const parsed = JSON.parse(content);
-  return { ...parsed, rawQuery: query };
+  try {
+    const parsed = JSON.parse(content);
+    return { ...parsed, rawQuery: query };
+  } catch {
+    return { rawQuery: query };
+  }
 }

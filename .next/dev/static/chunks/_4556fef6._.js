@@ -197,7 +197,7 @@ function findCarsByQuery(query) {
     const lower = query.toLowerCase();
     return cars.filter((car)=>car.Name.toLowerCase().includes(lower) || car.Model.toLowerCase().includes(lower) || car.Location.toLowerCase().includes(lower));
 }
-async function searchCarsWithAI(query, userLat, userLng) {
+async function searchCarsWithAI(query, userLat, userLng, signal) {
     const res = await fetch("/api/search", {
         method: "POST",
         headers: {
@@ -207,7 +207,8 @@ async function searchCarsWithAI(query, userLat, userLng) {
             query,
             userLat,
             userLng
-        })
+        }),
+        signal
     });
     if (!res.ok) throw new Error("Search failed");
     return res.json();

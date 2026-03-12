@@ -13,14 +13,14 @@ export async function buildSearchResponse(
   allScoredCars: ScoredCar[],
   intent: ParsedIntent
 ): Promise<SearchResponse> {
-  const explanation = recommendation.recommended
-    ? await generateExplanation(recommendation, intent)
-    : "Não encontrei carros que correspondam exatamente à sua busca.";
-
-  const alternativeReasons = await generateAlternativeReasons(
-    recommendation.alternatives,
-    intent
-  );
+  const [explanation, alternativeReasons] = await Promise.all([
+    recommendation.recommended
+      ? generateExplanation(recommendation, intent)
+      : Promise.resolve(
+          "Não encontrei carros que correspondam exatamente à sua busca."
+        ),
+    generateAlternativeReasons(recommendation.alternatives, intent),
+  ]);
 
   return {
     recommendation: recommendation.recommended

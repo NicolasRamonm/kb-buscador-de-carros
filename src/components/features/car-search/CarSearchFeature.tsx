@@ -26,7 +26,7 @@ export function CarSearchFeature() {
     <div className="flex flex-col">
       {/* Hero section */}
       <section className="flex items-center justify-center bg-background px-12 py-12">
-        <HeroSearchIA onSearch={handleSearch} />
+        <HeroSearchIA onSearch={handleSearch} onSeeAllOffers={handleSeeAll} />
       </section>
 
       {/* Brands section */}

@@ -30,9 +30,10 @@ export function CarResultsFeature() {
   useEffect(() => {
     if (!query || brandFilter) return;
     let cancelled = false;
+    const controller = new AbortController();
     setLoading(true);
 
-    searchCarsWithAI(query)
+    searchCarsWithAI(query, undefined, undefined, controller.signal)
       .then((result) => {
         if (cancelled) return;
         setAiResult(result);
@@ -48,7 +49,10 @@ export function CarResultsFeature() {
         if (!cancelled) setLoading(false);
       });
 
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+      controller.abort();
+    };
   }, [query, brandFilter]);
 
   const brandCars = useMemo(() => {
@@ -125,7 +129,9 @@ export function CarResultsFeature() {
           <span className="text-[15px] font-semibold text-gray-900">
             {isBrandMode
               ? brandFilter
-              : `\u201C${query || "Carro confortável para família na cidade, até R$ 100.000"}\u201D`}
+              : query
+                ? `\u201C${query}\u201D`
+                : "Todos os carros"}
           </span>
         </div>
         <span className="text-xs text-gray-600">
@@ -226,71 +232,78 @@ export function CarResultsFeature() {
           {/* Car result cards */}
           {!loading &&
             filtered.map((car) => (
-              <Card
+              <Link
                 key={`${car.Name}-${car.Model}-${car.index}`}
-                className={
-                  car.isSpecialOffer
-                    ? "flex gap-4 border-2 border-amber-300 bg-amber-50/50 p-3"
-                    : "flex gap-4 p-3"
-                }
-                shadow="md"
+                href={`/detalhe?id=${car.index}`}
+                className="block"
               >
-                <div
+                <Card
                   className={
                     car.isSpecialOffer
-                      ? "h-[140px] w-[220px] shrink-0 rounded-xl bg-amber-100"
-                      : "h-[140px] w-[220px] shrink-0 rounded-xl bg-gray-200"
+                      ? "flex gap-4 border-2 border-amber-300 bg-amber-50/50 p-3"
+                      : "flex gap-4 p-3"
                   }
-                />
-                <div className="flex flex-1 flex-col gap-1.5">
-                  <div className="flex items-center gap-1.5">
-                    <h3 className="text-[15px] font-semibold text-gray-900">
-                      {car.Name} {car.Model}
-                    </h3>
-                    {car.isRecommended && (
-                      <Badge variant="success">Recomendado pela IA</Badge>
-                    )}
-                    {car.isSpecialOffer && (
-                      <Badge variant="special">Condições especiais para você</Badge>
-                    )}
-                  </div>
-                  <p className="text-xs text-gray-600">
-                    {car.year ?? 2019} &bull;{" "}
-                    {car.mileage ? `${car.mileage.toLocaleString("pt-BR")} km` : "45.000 km"}{" "}
-                    &bull; {car.transmission ?? "Automático"} &bull;{" "}
-                    {car.fuel ?? "Flex"}
-                  </p>
-                  <div className="mt-auto flex items-center justify-between">
-                    <div className="flex flex-col gap-0.5">
-                      <span
-                        className={
-                          car.isSpecialOffer
-                            ? "text-base font-bold text-amber-700"
-                            : "text-base font-bold text-blue-600"
-                        }
-                      >
-                        {formatPrice(car.Price)}
-                      </span>
-                      <span className="text-[11px] text-gray-500">
-                        {car.Location}
-                      </span>
+                  shadow="md"
+                >
+                  <div
+                    className={
+                      car.isSpecialOffer
+                        ? "h-[140px] w-[220px] shrink-0 rounded-xl bg-amber-100"
+                        : "h-[140px] w-[220px] shrink-0 rounded-xl bg-gray-200"
+                    }
+                  />
+                  <div className="flex flex-1 flex-col gap-1.5">
+                    <div className="flex items-center gap-1.5">
+                      <h3 className="text-[15px] font-semibold text-gray-900">
+                        {car.Name} {car.Model}
+                      </h3>
+                      {car.isRecommended && (
+                        <Badge variant="success">Recomendado pela IA</Badge>
+                      )}
+                      {car.isSpecialOffer && (
+                        <Badge variant="special">Condições especiais para você</Badge>
+                      )}
                     </div>
-                    {car.isSpecialOffer ? (
-                      <Button
-                        size="sm"
-                        className="border-amber-400 bg-amber-600 text-white hover:bg-amber-700"
-                        onClick={() => setShowFinancingPopup(true)}
-                      >
-                        Ver condições
-                      </Button>
-                    ) : (
-                      <Link href={`/detalhe?id=${car.index}`}>
+                    <p className="text-xs text-gray-600">
+                      {car.year ?? 2019} &bull;{" "}
+                      {car.mileage ? `${car.mileage.toLocaleString("pt-BR")} km` : "45.000 km"}{" "}
+                      &bull; {car.transmission ?? "Automático"} &bull;{" "}
+                      {car.fuel ?? "Flex"}
+                    </p>
+                    <div className="mt-auto flex items-center justify-between">
+                      <div className="flex flex-col gap-0.5">
+                        <span
+                          className={
+                            car.isSpecialOffer
+                              ? "text-base font-bold text-amber-700"
+                              : "text-base font-bold text-blue-600"
+                          }
+                        >
+                          {formatPrice(car.Price)}
+                        </span>
+                        <span className="text-[11px] text-gray-500">
+                          {car.Location}
+                        </span>
+                      </div>
+                      {car.isSpecialOffer ? (
+                        <Button
+                          size="sm"
+                          className="border-amber-400 bg-amber-600 text-white hover:bg-amber-700"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setShowFinancingPopup(true);
+                          }}
+                        >
+                          Ver condições
+                        </Button>
+                      ) : (
                         <Button size="sm">Ver detalhes</Button>
-                      </Link>
-                    )}
+                      )}
+                    </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+              </Link>
             ))}
 
           {!loading && filtered.length === 0 && (

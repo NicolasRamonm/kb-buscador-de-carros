@@ -8,14 +8,19 @@ import { CAR_TYPES } from "@/config/constants";
 
 interface HeroSearchIAProps {
   onSearch: (query: string) => void;
+  onSeeAllOffers: () => void;
 }
 
-export function HeroSearchIA({ onSearch }: HeroSearchIAProps) {
+export function HeroSearchIA({ onSearch, onSeeAllOffers }: HeroSearchIAProps) {
   const [query, setQuery] = useState("");
   const [activeType, setActiveType] = useState("Todos");
 
   const handleSubmit = () => {
-    onSearch(query || "Carro confortável para família na cidade");
+    if (query.trim()) {
+      onSearch(query.trim());
+    } else {
+      onSeeAllOffers();
+    }
   };
 
   return (
@@ -27,9 +32,6 @@ export function HeroSearchIA({ onSearch }: HeroSearchIAProps) {
             Buscar
           </span>
           <Sparkles size={20} className="text-violet-600" />
-          <span className="text-base font-medium text-blue-600">
-            Corolla 2020 automático branco
-          </span>
         </div>
 
         {/* Category pills */}
@@ -62,7 +64,7 @@ export function HeroSearchIA({ onSearch }: HeroSearchIAProps) {
 
         {/* CTA */}
         <div className="flex justify-center">
-          <Button size="lg" onClick={handleSubmit}>
+          <Button size="lg" onClick={onSeeAllOffers}>
             Ver todas as ofertas
           </Button>
         </div>

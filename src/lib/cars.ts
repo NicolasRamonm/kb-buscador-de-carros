@@ -24,12 +24,14 @@ export function findCarsByQuery(query: string): Car[] {
 export async function searchCarsWithAI(
   query: string,
   userLat?: number,
-  userLng?: number
+  userLng?: number,
+  signal?: AbortSignal
 ): Promise<SearchResponse> {
   const res = await fetch("/api/search", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ query, userLat, userLng }),
+    signal,
   });
 
   if (!res.ok) throw new Error("Search failed");

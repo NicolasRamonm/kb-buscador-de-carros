@@ -75,9 +75,6 @@ function buildSpecialOffer(
   const modelCar = findEnrichedCar(intent.model);
   if (!modelCar) return null;
 
-  const priceDiff = (modelCar.price - intent.maxPrice) / intent.maxPrice;
-  if (priceDiff > SPECIAL_OFFER.maxPriceFlexPercent) return null;
-
   const scored = scoredCars.find(
     (sc) => sc.car.model.toLowerCase() === intent.model!.toLowerCase()
   );

@@ -265,7 +265,7 @@ const BRANDS = [
     "Honda",
     "Hyundai",
     "Chevrolet",
-    "VW",
+    "Volkswagen",
     "BYD"
 ];
 const CAR_TYPES = [
